@@ -1,0 +1,83 @@
+Escape Characters in Python
+
+In Python, some characters are not allowed directly inside strings because they have special meanings.
+To include such characters, Python uses escape characters.
+
+What is an Escape Character?
+
+An escape character is a backslash (\) followed by another character.
+It tells Python to treat the following character literally, instead of its special meaning.
+
+Illegal Characters in Strings
+
+A common illegal character is a double quote (") inside a string enclosed by double quotes.
+
+Example (Error)
+txt = "We are the so-called "Vikings" from the north."
+
+Result
+SyntaxError
+
+
+Python thinks the string ends before Vikings.
+
+Using Escape Character to Fix the Error
+
+Use \" to insert a double quote inside a double-quoted string.
+
+Correct Example
+txt = "We are the so-called \"Vikings\" from the north."
+print(txt)
+
+Output
+We are the so-called "Vikings" from the north.
+
+Common Escape Characters in Python
+Escape Code	Result
+\'	Single quote
+\"	Double quote
+\\	Backslash
+\n	New line
+\r	Carriage return
+\t	Horizontal tab
+\b	Backspace
+\f	Form feed
+\ooo	Octal value
+\xhh	Hexadecimal value
+Examples of Common Escape Characters
+New Line (\n)
+print("Hello\nWorld")
+
+
+Output:
+
+Hello
+World
+
+Tab (\t)
+print("Name\tAge")
+print("John\t25")
+
+
+Output:
+
+Name    Age
+John    25
+
+Backslash (\\)
+print("This is a backslash: \\")
+
+
+Output:
+
+This is a backslash: \
+
+Key Points to Remember
+
+Escape characters start with \
+
+They help include special or restricted characters
+
+Very commonly used in strings, file paths, and formatting
+
+Strings remain readable and error-free

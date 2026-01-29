@@ -1,0 +1,154 @@
+String Concatenation
+To concatenate, or combine, two strings you can use the + operator.
+
+Example :
+
+Merge variable a with variable b into variable c:
+
+a = "Hello"
+b = "World"
+c = a + b
+print(c)
+
+Output :
+
+HelloWorld
+
+Example2:
+
+To add a space between them, add a " ":
+
+a = "Hello"
+b = "World"
+c = a + " " + b
+print(c)
+
+output :
+Hello World
+
+------------------------------------------------------------------------------------------------------
+Format Strings:
+String Formatting in Python
+
+In Python, strings and numbers cannot be combined directly using the + operator.
+
+Problem Example (Invalid)
+age = 36
+txt = "My name is John, I am " + age
+print(txt)
+
+Result
+TypeError: can only concatenate str (not "int") to str
+
+
+This happens because age is an integer and must be converted or formatted before joining with a string.
+
+Solution: String Formatting
+
+Python provides two main ways to combine strings and numbers:
+
+f-strings (recommended)
+
+format() method
+
+F-Strings
+
+F-strings were introduced in Python 3.6 and are the preferred and easiest way to format strings.
+
+Syntax
+f"string text {variable}"
+
+
+Prefix the string with f
+
+Use {} as placeholders for variables or expressions
+
+Example: Basic f-string
+age = 36
+txt = f"My name is John, I am {age}"
+print(txt)
+
+Output
+My name is John, I am 36
+---------------------------------------------------------------------------------------------------------
+Placeholders in f-Strings
+
+Placeholders can contain:
+
+Variables
+
+Expressions
+
+Functions
+
+Formatting modifiers
+
+Example: Using a Variable
+price = 59
+txt = f"The price is {price} dollars"
+print(txt)
+
+Output
+The price is 59 dollars
+
+Modifiers in Placeholders
+
+Modifiers are used to format values.
+
+Syntax
+{value:format}
+
+
+: separates value and format
+
+.2f means fixed-point number with 2 decimal places
+
+Example: Formatting Decimal Values
+price = 59
+txt = f"The price is {price:.2f} dollars"
+print(txt)
+
+Output
+The price is 59.00 dollars
+
+Using Expressions in Placeholders
+
+You can perform Python operations directly inside {}.
+
+Example: Math Operation
+txt = f"The price is {20 * 59} dollars"
+print(txt)
+
+Output
+The price is 1180 dollars
+
+Key Points to Remember
+
+f-strings are faster and more readable
+
+They work only in Python 3.6 and above
+
+Placeholders can contain full Python expressions
+
+Original variables are not modified
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

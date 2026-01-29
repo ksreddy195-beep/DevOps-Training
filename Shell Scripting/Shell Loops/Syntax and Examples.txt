@@ -1,0 +1,197 @@
+1. while Loop
+
+The while loop executes repeatedly as long as the condition is true.
+
+Syntax
+while [ condition ]
+do
+   commands
+done
+
+Example: Print numbers 1 to 5
+count=1
+while [ $count -le 5 ]
+do
+    echo $count
+    count=$((count + 1))
+done
+
+When to use
+
+When the number of iterations is not known in advance.
+
+For reading files line by line.
+
+For monitoring a condition (like file exisdy	its, process running, etc.)
+
+2. for Loop
+
+The for loop is used when you know the list or the range beforehand.
+
+Syntax: Loop through a list
+for item in apple banana mango
+do
+    echo $item
+done
+
+Loop through numbers
+for i in {1..5}
+do
+    echo "$i"
+done
+
+C-style syntax
+for (( i=1; i<=5; i++ ))
+do
+    echo $i
+done
+
+When to use
+
+Iterating through predefined lists.
+
+Iterating through files.
+
+Looping through numeric ranges.
+
+3. until Loop
+
+The until loop is the opposite of while.
+It runs until the condition becomes true.
+
+Syntax
+until [ condition ]
+do
+   commands
+done
+
+Example
+count=1
+until [ $count -gt 5 ]
+do
+    echo $count
+    count=$((count + 1))
+done
+
+When to use
+
+When you want to retry something until it succeeds.
+
+Checking server or network availability.
+
+4. select Loop
+
+The select loop is used to create simple menus. It works only in bash.
+
+Syntax
+select option in Start Stop Exit
+do
+    echo "You selected: $option"
+done
+
+Output
+1) Start
+2) Stop
+3) Exit
+#?
+
+When to use
+
+Creating simple command-line menu systems.
+
+Example:
+
+#!/bin/bash
+
+select choice in Show_Date Show_Files Show_Users Exit
+do
+    case $choice in
+        Show_Date) 
+	date
+	 ;; 
+	Show_Files)
+            ls -l
+            ;;
+        Show_Users)
+            who
+            ;;
+        Exit)
+            echo "Exiting..."
+            break
+            ;;
+        *)
+            echo "Invalid selection"
+            ;;
+    esac
+done
+
+5. Loop Control Commands
+5.a break
+
+Exits the loop immediately.
+
+for i in 1 2 3 4 5
+do
+  if [ $i -eq 3 ]; then
+     break
+  fi
+  echo $i
+done
+
+5.b continue
+
+Skips the current iteration and moves to the next.
+
+for i in {1..5}
+do
+  if [ $i -eq 3 ]; then
+     continue
+  fi
+  echo $i
+done
+
+6. Nested Loops
+
+A loop can be placed inside another loop.
+
+Example
+for i in 1 2 3
+do
+  for j in 1 2 3
+  do
+     echo "$i,$j"
+  done
+done
+
+Useful Real-World Examples
+Read a file line by line
+while read line
+do
+  echo "Line: $line"
+done < file.txt
+
+Loop through all .txt files
+for file in *.txt
+do
+    echo "Processing $file"
+done
+
+Keep checking server until it becomes reachable
+until curl -s http://localhost:8080 >/dev/null
+do
+   echo "Waiting for server..."
+   sleep 2
+done
+
+echo "Server is up"
+
+Simple menu using select loop
+select choice in Backup Restore Exit
+do
+    case $choice in
+       Backup) echo "Starting backup" ;;
+       Restore) echo "Restoring data" ;;
+       Exit) break ;;
+       *) echo "Invalid option" ;;
+    esac
+done

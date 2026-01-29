@@ -1,0 +1,48 @@
+CI/CD: It is a set of practices used in devops to automate how code is built, tested and delivered.
+
+CI:CONTINUOUS INTEGRATION
+
+Q:what is continuous integration?
+A:CI means developers frequently merge(integrate) their code into a shared branch. Every time they push code and automated pipelines runs to:
+ 1. build the code
+ 2. run tests
+ 3. check code quality
+ 4. detect bugs early
+
+Why it matters:?
+you find errors in early stage.
+fewer merge complex.
+faster feedback.
+stable code base
+ Example:
+   1. developers pushes code to GitHub
+   2. git hub actions runs:
+       .  npm install
+       .  npm test
+       .  npm build
+
+if test pass, code is healthy.
+if test fails, dev fixes immediately.
+
+---
+CD:CONTINUOUS DELIVERY/DEPLOYMENT.
+
+Delivery means the code that passed CI is packaged and made ready for deployment.
+Note: but human decides when to deploy.
+
+Example:
+CI builds a docker image.
+pushes it to a image registry.
+deployment is approved manually.
+
+Every successful build is automatically deployed to production.
+ step1: to read the image from image registry
+ step2: login to cloud platform
+ step3: deploy to cloud environment
+---
+
+
+
+
+
+ 

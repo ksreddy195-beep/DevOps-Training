@@ -1,0 +1,76 @@
+Built-in Data Types
+In programming, data type is an important concept.
+
+Variables can store data of different types, and different types can do different things.
+
+Python has the following data types built-in by default, in these categories:
+
+Text Type:	str
+Numeric Types:	int, float, complex
+Sequence Types:	list, tuple, range
+Mapping Type:	dict (dictionary)
+Set Types:	set, frozenset
+Boolean Type:	bool
+Binary Types:	bytes, bytearray, memoryview
+None Type:	NoneType
+
+---
+# String
+x = "Hello World"
+print(x)
+
+# Integer
+x = 20
+print(x)
+
+# Float
+x = 20.5
+print(x)
+
+# Complex
+x = 1j
+print(x)
+
+# List
+x = ["apple", "banana", "cherry"]
+print(x)
+
+# Tuple
+x = ("apple", "banana", "cherry")
+print(x)
+
+# Range
+x = range(6)
+print(list(x))
+
+# Dictionary
+x = {"name": "John", "age": 36}
+print(x)
+
+# Set
+x = {"apple", "banana", "cherry"}
+print(x)
+
+# Frozenset
+x = frozenset({"apple", "banana", "cherry"})
+print(x)
+
+# Boolean
+x = True
+print(x)
+
+# Bytes
+x = b"Hello"
+print(x)
+
+# Bytearray
+x = bytearray(5)
+print(x)
+
+# Memoryview
+x = memoryview(bytes(5))
+print(x)
+
+# NoneType
+x = None
+print(x)

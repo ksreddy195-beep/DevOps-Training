@@ -1,0 +1,144 @@
+Syntax:
+
+1. key-value pair
+
+example:
+name: Sandeep
+age: 25
+country: India
+
+New Example in devops terms:
+Username: Sandeep
+Password: 1234
+token: 55 (which includes special characters numbers).
+---
+2. Nested structures
+Example:
+person:
+  name: Sandeep
+  skills:
+    - DevOps
+    - Linux
+    - Python
+For every nested structure we need to follow two spaces for sure (make sure it's even).
+
+---
+3.lists in Yaml
+Example:
+fruits:
+  - apple
+  - banana
+  - mango
+
+---
+4. list of objects:
+Example:
+users:
+  - name: Ravi
+    role: admin
+  - name: Priya
+    role: developer
+
+---
+5. Dictionaries:
+Example1:
+server:
+  host: localhost
+  port: 8000
+
+Nested Dictionaries:
+Example2:
+database:
+  mysql:
+    host: localhost
+    username: root
+    password: admin123
+-------------------------------------------------------------------
+5. Data Types
+Strings
+app: "my-application"
+
+
+Quotes are optional unless:
+
+Contains special characters
+
+Starts with special symbols
+
+✔ Numbers
+replicas: 3
+timeout: 15
+
+✔ Boolean
+enabled: true
+debug: false
+
+✔ Null
+description: null
+
+---
+6.Comments
+# This is my database config
+database:
+  name: test_db
+  port: 5432
+
+---
+7. Multiline Text
+a:literal block  [|].
+Example:
+bio: |
+  Sandeep is a DevOps engineer.
+  He works with Kubernetes and Terraform.
+
+b: Folded Block  [>]  it joins lines into a single paragraph.
+Example:
+message: >
+  This is a very long message that will appear in a single line when processed.
+---
+8.Json Format
+Comparison: JSON vs YAML
+JSON
+{
+  "name": "Sandeep",
+  "skills": ["DevOps", "Python"]
+}
+
+YAML
+name: Sandeep
+skills:
+  - DevOps
+  - Python
+---
+9. Common YAML Mistakes to avoid
+Using tabs
+ Always use spaces
+
+Misaligned indentation
+Correct level alignment
+
+Example incorrect:
+
+services:
+ - name: api
+    port: 8080
+
+
+Correct:
+
+services:
+  - name: api
+    port: 8080
+-------------------------------------------------------------------------------------
+Another example to convert Json to Yaml:
+{"server":{"host":"localhost","port":8000}}
+
+Server:
+  host:"localhost"
+  port : 8080
+
+---
+fruits:
+ - apple
+ - banana
+ - mango

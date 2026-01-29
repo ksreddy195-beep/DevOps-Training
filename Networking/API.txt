@@ -1,0 +1,132 @@
+API (Application Programming Interface)
+Definition
+
+API stands for Application Programming Interface.
+It is a communication interface that allows different software applications to exchange data and functionality in a standardized way.
+
+API acts as a bridge between two systems.
+
+
+Why APIs are needed
+
+Applications are built using different technologies
+
+Direct access to internal logic is unsafe
+
+APIs provide:
+
+Security
+
+Standard communication
+
+Reusability
+
+Automation
++-------------+        HTTP Request        +-------------+
+|             | ------------------------> |              |
+|   CLIENT    |   (GET / POST / PUT)      |    SERVER    |
+| (Browser /  |                              (Backend)   |
+|  App / UI)  | <------------------------ |             |
+|             |        HTTP Response      |             |
++-------------+        (JSON / XML)        +-------------+
+                   ▲
+                   |
+                 API
+
+Explanation
+
+Client: Frontend, mobile app, CLI, or another service
+
+API: Middle layer that processes requests
+
+Server: Backend logic + database
+
+Response: Data returned (usually JSON)
+
+---------------------------------------------------------------------
+How an API works (Step-by-step)
+
+Client sends a request
+
+API validates the request
+
+Server processes the logic
+
+Data is fetched/updated
+
+API sends back a response
+---------------------------------------------------------
+
+API Request Structure
+Method + Endpoint + Headers + Body
+
+
+Example
+GET /api/users/1
+Authorization: Bearer token
+
+API Response Structure
++
+
+
+Example
+{
+  "id": 1,
+  "name": "Sandeep",
+  "role": "DevOps Engineer"
+}
+
+Common HTTP Methods
+Method	Purpose
+GET	Fetch data
+POST	Create data
+PUT	Update entire data
+PATCH	Update partial data
+DELETE	Remove data
+HTTP Status Codes
+Code	Meaning
+200	Success
+201	Created
+400	Bad request
+401	Unauthorized
+403	Forbidden
+404	Not found
+500	Server error
+Types of APIs
+
+REST API – Uses HTTP, JSON (most common)
+
+SOAP API – XML-based, strict
+
+GraphQL – Client controls response
+
+gRPC – High-performance, binary protocol
+--------------------------------------------------------
+
+API Security Concepts
+
+Authentication (API Key, Token, OAuth)
+
+Authorization (roles, permissions)
+
+HTTPS (encryption)
+
+Rate limiting
+
+API in DevOps (Very Important)
+
+
+APIs are everywhere in DevOps:
+
+CI/CD Tool ───► Cloud API ───► Infrastructure
+kubectl  ───► Kubernetes API Server
+Terraform ───► AWS / Azure APIs
+Grafana  ───► Metrics APIs
+
+Examples
+
+kubectl get pods → calls Kubernetes API
+
+Terraform creates resources via Cloud APIs
+
+CI pipelines trigger builds using REST APIs

@@ -1,0 +1,33 @@
+Disk and storage management in Linux:
+
+viewing disk information:-
+lsblk  -----DISPLAY BLOCK DEVICES
+fdisk -l   ------- LISTS DISK PARTITIONS
+blkid  ---- Displays uuid's of devices.
+df -h  ---- check disk space usage.
+du -sh /path  ----- displays concern directory related data
+
+Partition Management:
+
+fdisk /dev/sdX ----- to create and manage partitions
+parted /dev/sdX --- same as above and alternative
+mkfs.ext4 /dev/sdx1  ----- to create a file systems.
+
+Mounting and Unmounting:
+mount /dev/sdX1   ------ /mnt
+umount /mnt ---- to unmount disk
+mount -now remount, rw /mnt  ---- remount a partition as read and write.
+
+
+Logical volume management:
+pvcreate /dev/sdX   --- to create a physical volume.
+vgcreate _name /dev/sdX --- to create a group for various volumes.
+lvcreate -l 10g -n lv_name vg_name ---- to create logical volume.
+
+
+Swap Management:
+mkswap /dev/sdX ---- to create a swap partition.
+swapon /dev/sdX  ------ to activate that space
+swapoff /dev/sdX   ---- to disable it
+swapon --show  ------ list down all the active swaps.
+free -h    ------ shows memory and swap usages.

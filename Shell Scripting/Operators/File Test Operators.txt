@@ -1,0 +1,300 @@
+Unix File Test Operators
+
+File test operators are used in shell scripting to check different properties of files. They are typically used with the [ ] or test command.
+
+1. -b file
+
+Description: Checks if the file is a block special file (e.g., device files like /dev/sda).
+Syntax:
+
+[ -b filename ]
+
+
+
+Example:
+
+file="test"
+
+if [ -b $file ]; then
+    echo "$file is a block special file"
+else
+    echo "$file is not a block special file"
+fi
+
+
+Output:
+
+test is not a block special file
+
+2. -c file
+
+Description: Checks if the file is a character special file (e.g., /dev/tty).
+Syntax:
+
+[ -c filename ]
+
+
+Example:
+
+if [ -c $file ]; then
+    echo "$file is a character special file"
+else
+    echo "$file is not a character special file"
+fi
+
+
+Output:
+
+test is not a character special file
+
+3. -d file
+
+Description: Checks if the file is a directory.
+Syntax:
+
+[ -d filename ]
+
+
+Example:
+
+if [ -d $file ]; then
+    echo "$file is a directory"
+else
+    echo "$file is not a directory"
+fi
+
+
+Output:
+
+test is not a directory
+
+4. -f file
+
+Description: Checks if the file is an ordinary file (not a directory or special file).
+Syntax:
+
+[ -f filename ]
+
+
+Example:
+
+if [ -f $file ]; then
+    echo "$file is an ordinary file"
+else
+    echo "$file is not an ordinary file"
+fi
+
+
+Output:
+
+test is an ordinary file
+
+5. -g file
+
+Description: Checks if the file has set group ID (SGID) bit set.
+Syntax:
+
+[ -g filename ]
+
+
+Example:
+
+if [ -g $file ]; then
+    echo "$file has SGID bit set"
+else
+    echo "$file does not have SGID bit set"
+fi
+
+
+Output:
+
+test does not have SGID bit set
+
+6. -k file
+
+Description: Checks if the file has the sticky bit set.
+Syntax:
+
+[ -k filename ]
+
+
+Example:
+
+if [ -k $file ]; then
+    echo "$file has sticky bit set"
+else
+    echo "$file does not have sticky bit set"
+fi
+
+
+Output:
+
+test does not have sticky bit set
+
+7. -p file
+
+Description: Checks if the file is a named pipe (FIFO).
+Syntax:
+
+[ -p filename ]
+
+
+Example:
+
+if [ -p $file ]; then
+    echo "$file is a named pipe"
+else
+    echo "$file is not a named pipe"
+fi
+
+
+Output:
+
+test is not a named pipe
+
+8. -t file
+
+Description: Checks if the file descriptor is open and associated with a terminal.
+Syntax:
+
+[ -t fd ]
+
+
+Example:
+
+if [ -t 0 ]; then
+    echo "Standard input is a terminal"
+else
+    echo "Standard input is not a terminal"
+fi
+
+
+Output (if run in terminal):
+
+Standard input is a terminal
+
+9. -u file
+
+Description: Checks if the file has the set user ID (SUID) bit set.
+Syntax:
+
+[ -u filename ]
+
+
+Example:
+
+if [ -u $file ]; then
+    echo "$file has SUID bit set"
+else
+    echo "$file does not have SUID bit set"
+fi
+
+
+Output:
+
+test does not have SUID bit set
+
+10. -r file
+
+Description: Checks if the file is readable.
+Syntax:
+
+[ -r filename ]
+
+
+Example:
+
+if [ -r $file ]; then
+    echo "$file is readable"
+else
+    echo "$file is not readable"
+fi
+
+
+Output:
+
+test is readable
+
+11. -w file
+
+Description: Checks if the file is writable.
+Syntax:
+
+[ -w filename ]
+
+
+Example:
+
+if [ -w $file ]; then
+    echo "$file is writable"
+else
+    echo "$file is not writable"
+fi
+
+
+Output:
+
+test is writable
+
+12. -x file
+
+Description: Checks if the file is executable.
+Syntax:
+
+[ -x filename ]
+
+
+Example:
+
+if [ -x $file ]; then
+    echo "$file is executable"
+else
+    echo "$file is not executable"
+fi
+
+
+Output:
+
+test is executable
+
+13. -s file
+
+Description: Checks if the file has size greater than zero.
+Syntax:
+
+[ -s filename ]
+
+
+Example:
+
+if [ -s $file ]; then
+    echo "$file has size greater than zero"
+else
+    echo "$file is empty"
+fi
+
+
+Output:
+
+test has size greater than zero
+
+14. -e file
+
+Description: Checks if the file exists (true for both files and directories).
+Syntax:
+
+[ -e filename ]
+
+
+Example:
+
+if [ -e $file ]; then
+    echo "$file exists"
+else
+    echo "$file does not exist"
+fi
+
+
+Output:
+
+test exists

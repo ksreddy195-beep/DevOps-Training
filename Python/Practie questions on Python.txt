@@ -1,0 +1,108 @@
+1. Strings – Practice Questions
+
+Write a program to count how many vowels are present in a given string.
+Hint: Check each character and compare it with 'a, e, i, o, u'.
+
+Write a program to reverse a given string.
+Hint: Use string slicing or loop from last character to first.
+
+Write a program to check whether a string is a palindrome.
+Hint: Compare the original string with its reverse.
+
+Write a program to count the number of words in a sentence.
+Hint: Use the split() method.
+
+Write a program to count the frequency of each character in a string.
+Hint: Use a dictionary to store character counts.
+
+Write a program to remove all spaces from a string.
+Hint: Replace spaces with an empty string or build a new string.
+
+Write a program to convert all lowercase letters to uppercase.
+Hint: Use ASCII values or built-in functions.
+
+2. Collections – Practice Questions
+Lists
+
+Write a program to find the largest number in a list.
+Hint: Compare elements one by one.
+
+Write a program to find the smallest number in a list.
+Hint: Initialize a variable with the first element.
+
+Write a program to remove duplicate values from a list.
+Hint: Use a set or check before adding elements.
+
+Write a program to count how many times a value appears in a list.
+Hint: Use a loop and a counter variable.
+
+Write a program to merge two lists into a single list.
+Hint: Use list addition or extend().
+
+Tuples
+
+Write a program to convert a tuple into a list.
+Hint: Use the list() function.
+
+Write a program to check whether an element exists in a tuple.
+Hint: Use in keyword.
+
+Sets
+
+Write a program to find common elements between two sets.
+Hint: Use intersection operation.
+
+Write a program to find elements present only in the first set.
+Hint: Use difference operation.
+
+Dictionaries
+
+Write a program to count the frequency of words in a sentence.
+Hint: Split the sentence and store counts in a dictionary.
+
+Write a program to find the key with the highest value in a dictionary.
+Hint: Compare values while looping.
+
+3. Conditional Statements – Practice Questions
+
+Write a program to check whether a number is positive, negative, or zero.
+Hint: Use if, elif, and else.
+
+Write a program to check whether a number is even or odd.
+Hint: Use % 2.
+
+Write a program to find the largest of three numbers.
+Hint: Compare numbers using conditions.
+
+Write a program to check whether a year is a leap year.
+Hint: Use divisibility rules of 4, 100, and 400.
+
+Write a program to check whether a character is a vowel or consonant.
+Hint: Compare with vowel characters.
+
+4. Loops – Practice Questions
+For Loop
+
+Write a program to print numbers from 1 to 10 using a for loop.
+Hint: Use range().
+
+Write a program to print all even numbers between 1 and 50.
+Hint: Use condition inside loop.
+
+Write a program to calculate the sum of numbers in a list.
+Hint: Use a variable to store sum.
+
+Write a program to print the multiplication table of a number.
+Hint: Loop from 1 to 10.
+
+While Loop
+
+Write a program to reverse a given number.
+Hint: Use % and //.
+
+Write a program to find the factorial of a number.
+Hint: Multiply numbers in a loop.
+
+Write a program to check whether a number is a palindrome.
+Hint: Reverse the number and compare.
+----------------------------------------------------------------

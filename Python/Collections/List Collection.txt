@@ -1,0 +1,183 @@
+Python Lists
+1. What is a List?
+
+A list is a built-in Python data structure used to store multiple values in a single variable.
+
+Lists are:
+
+Ordered (items have a fixed position)
+
+Mutable (can be changed)
+
+Allow duplicates
+
+Syntax
+
+my_list = [10, 20, 30, 40]
+
+Access List Items
+Indexing
+
+List items are accessed using index numbers
+
+Index starts from 0
+
+numbers = [10, 20, 30, 40]
+print(numbers[0])   # 10
+print(numbers[2])   # 30
+
+Negative Indexing
+
+Access items from the end
+
+print(numbers[-1])  # 40
+print(numbers[-2])  # 30
+
+Range of Indexes (Slicing)
+print(numbers[1:3])   # [20, 30]
+print(numbers[:2])    # [10, 20]
+print(numbers[2:])    # [30, 40]
+
+Change List Items
+
+Since lists are mutable, values can be changed
+
+numbers = [10, 20, 30]
+numbers[1] = 25
+print(numbers)   # [10, 25, 30]
+
+Change a Range of Values
+numbers[1:3] = [50, 60]
+print(numbers)   # [10, 50, 60]
+
+Add List Items
+append()
+
+Adds item at the end
+
+numbers.append(40)
+
+insert()
+
+Adds item at a specific index
+
+numbers.insert(1, 15)
+
+extend()
+
+Adds elements from another list
+
+numbers.extend([50, 60])
+
+Remove List Items
+remove()
+
+Removes specified value
+
+numbers.remove(20)
+
+pop()
+
+Removes item by index (default: last item)
+
+numbers.pop()
+numbers.pop(1)
+
+del keyword
+del numbers[0]
+
+clear()
+
+Removes all elements
+
+numbers.clear()
+
+Loop Lists
+Using for loop
+numbers = [10, 20, 30]
+for n in numbers:
+    print(n)
+
+Using index
+for i in range(len(numbers)):
+    print(numbers[i])
+
+Using while loop
+i = 0
+while i < len(numbers):
+    print(numbers[i])
+    i += 1
+
+List Comprehension
+
+Shorter way to create a list using a loop
+
+Syntax
+
+new_list = [expression for item in iterable if condition]
+
+
+Example
+
+numbers = [1, 2, 3, 4, 5]
+even_numbers = [n for n in numbers if n % 2 == 0]
+print(even_numbers)   # [2, 4]
+
+Sort Lists
+sort()
+
+Sorts list permanently
+
+numbers = [40, 10, 30, 20]
+numbers.sort()
+print(numbers)   # [10, 20, 30, 40]
+
+Reverse sort
+numbers.sort(reverse=True)
+
+sorted()
+
+Returns a new sorted list
+
+new_list = sorted(numbers)
+
+Copy Lists
+Using copy()
+list1 = [1, 2, 3]
+list2 = list1.copy()
+
+Using list()
+list2 = list(list1)
+
+Using slicing
+list2 = list1[:]
+
+Join Lists
+Using + operator
+list1 = [1, 2]
+list2 = [3, 4]
+list3 = list1 + list2
+
+Using extend()
+list1.extend(list2)
+
+Using loop
+for item in list2:
+    list1.append(item)
+
+List Methods (Common Ones)
+Method	Description
+append()	Adds item to end
+insert()	Adds item at index
+remove()	Removes specified item
+pop()	Removes item by index
+clear()	Removes all items
+index()	Returns index of value
+count()	Counts occurrences
+sort()	Sorts the list
+reverse()	Reverses the list
+copy()	Returns a copy
+Devops Training
+
+
+https://www.w3schools.com/python/exercise.asp?x=xrcise_lists1

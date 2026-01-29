@@ -1,0 +1,51 @@
+What is shell scripting?
+- A shell is a program that takes commands from you and tells the OS what to do. 
+A shell script is a file containing a series of commands for the shell to execute. The shell itself is a command-line interpreter (CLI), while a shell script is a saved list of instructions (usually with .sh extension) like myscript.sh
+
+Examples:
+Most popular shell is : 
+bash - most commonly used.
+zsh - it is a fancy shell and have more options like to we can maintain multiple windows.
+sh - oldest shell
+fish - it is user friendly like GUI
+
+------------------------------------
+Things to know before starting shell scripting:
+kernel -The kernel is a computer program that is the core of a computer's operating system, with complete control over everything in the system. It manages the following resources of the Linux system:
+File management
+Process management
+I/O management
+Memory management
+   Device management etc.
+   Complete Linux system = Kernel + GNUsystem utilities and libraries + other management scripts + installation scripts.
+-----------------------------------------------------------------------------------------------------------------------
+
+Shell:
+A shell is a special user program that provides an interface for the user to use operating system services. Shell accepts human-readable commands from users and converts them into something which the kernel can understand. It is a command language interpreter that executes commands read from input devices such as keyboards or from files. The shell gets started when the user logs in or starts the terminal.
+
+Shell is classified into 2 categories:
+1. command line shell
+Shell can be accessed by users using a command line interface. A special program called Terminal in Linux/macOS, or Command Prompt in Windows OS is provided to type in the human-readable commands such as "cat", "ls" etc. and then it is being executed. The result is then displayed on the terminal to the user.
+2. graphical shell.
+Graphical shells let users interact through a GUI instead of typing commands.
+
+They provide windows, icons, buttons, and menus for performing tasks.
+
+Users can open, close, move, and resize windows visually.
+
+Examples: Windows OS, Ubuntu (GNOME/KDE).
+
+They make computers easy to use, even without command-line knowledge.
+-------------------------------------------------------------------------------------------------------------------------------
+
+Terminal:
+This program provides a text-based interface for users to interact with the shell.
+
+It allows users to enter commands and view outputs.
+
+It is commonly referred to as a terminal, console, or command-line interface (CLI).
+
+Large scripts or automation tasks can be executed in the terminal.
+
+It is useful for system administration, development, Devops and advanced operations.
+---------------------------------------------------------------------------------------------------------------------------------------

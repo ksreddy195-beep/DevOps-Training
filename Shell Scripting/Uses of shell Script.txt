@@ -1,0 +1,18 @@
+Uses and Definitions
+1.Automate repetitive tasks
+ Shell scripts turn routine jobs like file cleanup, backups, or server updates into one-click actions, saving time and reducing manual effort
+
+2.Reliable and consistent.
+ Shell scripts run the exact same steps every time, without mistakes. Once you write and test a script, you can count on it to perform tasks consistently whether it's setting up servers, cleaning up files, or running a deployment. This removes human error and ensures predictable results.
+
+3.Native support on unix or Linux systems
+ Shell scripting is natively supported on Unix-based systems, requiring no additional installations. The shell environment (like Bash or Zsh) is pre-installed, allowing scripts to run seamlessly across most Linux distributions and Unix-like operating systems.
+
+4.Great for linking commands to work together
+ Shell scripts make it easy to link different commands together. You can pass the output of one command into another, filter data, or run tasks step by step all in one script. This helps automate complex jobs using simple building blocks.
+
+5.Ideal for IT, DevOps and Monitoring
+ Shell scripts help automate important tasks like checking system health, setting up servers, and scheduling jobs to run at specific times (using tools like cron). In DevOps, they are widely used to speed up deployments and manage infrastructure without doing everything manually.
+
+6.Light weight and easy to write. 
+ They are interpreted, so there is no compile step. You can write a useful script in minutes, and test it instantly perfect for quick fixes and small tasks.

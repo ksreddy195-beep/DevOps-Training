@@ -1,0 +1,194 @@
+What is a Module in Python?
+
+A module is a file containing Python code.
+
+It can include:
+
+Functions
+
+Variables
+
+Dictionaries
+
+Classes
+
+A module allows you to reuse code across multiple programs.
+
+Any file with a .py extension can be used as a module.
+
+Think of a module as a code library.
+
+Creating a Module
+
+To create a module:
+
+Write Python code
+
+Save it in a file with the .py extension
+
+Example: mymodule.py
+def greeting(name):
+    print("Hello, " + name)
+
+Using a Module
+
+Use the import keyword to use a module.
+
+Example
+import mymodule
+
+mymodule.greeting("Jonathan")
+
+Output
+Hello, Jonathan
+
+
+Note:
+
+Use the syntax:
+module_name.function_name()
+----------------------------------------------------------------------
+Variables in a Module
+
+Modules can also contain variables such as dictionaries, lists, etc.
+
+Example: mymodule.py
+person1 = {
+    "name": "John",
+    "age": 36,
+    "country": "Norway"
+}
+
+Using the Variable
+import mymodule
+
+a = mymodule.person1["age"]
+print(a)
+
+Output
+36
+------------------------------------------------------------------------------------------
+Naming a Module
+
+You can name the module file anything you like
+
+The file must end with .py
+
+Examples:
+
+math_utils.py
+
+user_data.py
+
+mymodule.py
+-------------------------------------------------------------------------------------
+Re-naming a Module (Alias)
+
+You can give a module an alias using the as keyword.
+
+Example
+import mymodule as mx
+
+a = mx.person1["age"]
+print(a)
+
+Output
+36
+-------------------------------------------------------------
+
+Alias is useful when:
+
+Module names are long
+
+You want cleaner code
+
+Built-in Modules
+
+Python has many built-in modules that come pre-installed.
+
+Example: Using platform module
+import platform
+
+x = platform.system()
+print(x)
+
+Output (depends on OS)
+Windows
+
+
+or
+
+Linux
+
+
+or
+
+Darwin
+----------------------------------------------------------------------------------
+Using the dir() Function
+
+The dir() function lists all names (functions, variables) in a module.
+
+Example
+import platform
+
+x = dir(platform)
+print(x)
+
+Output (sample)
+['__builtins__', '__doc__', '__file__', '__name__', 
+ 'architecture', 'machine', 'node', 'platform', 
+ 'processor', 'release', 'system', 'version']
+
+Note:
+
+dir() works for both built-in and user-defined modules.
+----------------------------------------------------------------
+
+Importing Specific Items from a Module
+
+You can import only required items using from.
+
+Example: mymodule.py
+def greeting(name):
+    print("Hello, " + name)
+
+person1 = {
+    "name": "John",
+    "age": 36,
+    "country": "Norway"
+}
+
+Import Only person1
+from mymodule import person1 as per
+
+print(per["age"])
+
+Output
+36
+
+
+Important Note:
+
+When using from module import item
+
+Do not use the module name
+Correct: person1["age"]
+Wrong: mymodule.person1["age"]
+------------------------------------------------------------------------------------
+
+Summary
+
+A module is a .py file containing reusable code
+
+Use import to include a module
+
+Modules can contain functions and variables
+
+Use as for aliasing
+
+Python provides many built-in modules
+
+Use dir() to explore module contents
+
+Use from module import item to import specific parts

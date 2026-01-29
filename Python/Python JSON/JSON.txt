@@ -1,0 +1,178 @@
+JSON in Python – Notes
+What is JSON?
+
+JSON (JavaScript Object Notation) is a lightweight format for storing and exchanging data.
+
+JSON is text-based and written using JavaScript object notation.
+
+It is widely used in web applications and APIs.
+--------------------------------------------------------------------------------
+JSON in Python
+
+Python provides a built-in module called json.
+
+It is used to:
+
+Parse JSON data into Python objects
+
+Convert Python objects into JSON format
+---------------------------------------------------------------------------
+
+Importing the JSON Module
+import json
+
+Parse JSON (Convert JSON to Python)
+
+The json.loads() method converts a JSON string into a Python dictionary.
+
+Example
+import json
+
+x = '{ "name":"John", "age":30, "city":"New York"}'
+y = json.loads(x)
+
+print(y["age"])
+
+Output
+30
+-------------------------------------------------------------------
+Convert Python to JSON
+
+The json.dumps() method converts Python objects into a JSON string.
+
+Example
+import json
+
+x = {
+  "name": "John",
+  "age": 30,
+  "city": "New York"
+}
+
+y = json.dumps(x)
+print(y)
+
+Output
+{"name": "John", "age": 30, "city": "New York"}
+--------------------------------------------------------------------------
+
+Python Objects Supported by JSON
+
+Python Type	JSON Type
+dict	        Object
+list		Array
+tuple		Array
+str		String
+int		Number
+float		Number
+True		true
+False		false
+None		null
+-------------------------------------------------------------------
+Examples: Python Objects to JSON
+import json
+
+print(json.dumps({"name": "John", "age": 30}))
+print(json.dumps(["apple", "bananas"]))
+print(json.dumps(("apple", "bananas")))
+print(json.dumps("hello"))
+print(json.dumps(42))
+print(json.dumps(31.76))
+print(json.dumps(True))
+print(json.dumps(False))
+print(json.dumps(None))
+
+Output
+{"name": "John", "age": 30}
+["apple", "bananas"]
+["apple", "bananas"]
+"hello"
+42
+31.76
+true
+false
+null
+---------------------------------------------------------------
+Convert a Complex Python Object to JSON
+Example
+import json
+
+x = {
+  "name": "John",
+  "age": 30,
+  "married": True,
+  "divorced": False,
+  "children": ("Ann", "Billy"),
+  "pets": None,
+  "cars": [
+    {"model": "BMW 230", "mpg": 27.5},
+    {"model": "Ford Edge", "mpg": 24.1}
+  ]
+}
+
+print(json.dumps(x))
+
+Output
+{"name": "John", "age": 30, "married": true, "divorced": false, "children": ["Ann", "Billy"], "pets": null, "cars": [{"model": "BMW 230", "mpg": 27.5}, {"model": "Ford Edge", "mpg": 24.1}]}
+---------------------------------------------------------------------
+Formatting JSON Output
+Using the indent Parameter
+
+Improves readability by adding indentation.
+
+print(json.dumps(x, indent=4))
+
+Output
+{
+    "name": "John",
+    "age": 30,
+    "married": true,
+    "divorced": false,
+    "children": [
+        "Ann",
+        "Billy"
+    ],
+    "pets": null,
+    "cars": [
+        {
+            "model": "BMW 230",
+            "mpg": 27.5
+        },
+        {
+            "model": "Ford Edge",
+            "mpg": 24.1
+        }
+    ]
+}
+-------------------------------------------------------------------------------------------------------------
+Custom Separators
+
+Default separators are (", ", ": ").
+
+print(json.dumps(x, indent=4, separators=(". ", " = ")))
+
+Sorting JSON Keys
+print(json.dumps(x, indent=4, sort_keys=True))
+
+Output
+{
+    "age": 30,
+    "cars": [...],
+    "children": [...],
+    "divorced": false,
+    "married": true,
+    "name": "John",
+    "pets": null
+}
+
+Key Points
+
+json.loads() converts JSON to Python objects.
+
+json.dumps() converts Python objects to JSON.
+
+JSON is text-based and language-independent.
+
+Formatting options like indent, separators, and sort_keys improve readability.
+
+JSON is commonly used for API data exchange.

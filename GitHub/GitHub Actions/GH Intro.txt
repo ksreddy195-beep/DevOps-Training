@@ -1,0 +1,24 @@
+GH Actions:
+GitHub Actions is automation inside GitHub.
+You can run workflows when things happen:
+
+push / pull request
+
+tags
+
+releases
+
+schedules (cron)
+
+manual trigger
+
+You define automation using a file in your repo.
+
+-------------------------------------------------------------------
+About .YML or YAML file:
+ 
+This is used for configurations and 
+
+Used in Devops Kubernetes github actions ansebell and docker etc.,
+
+

@@ -1,0 +1,63 @@
+Homework on Operators
+
+Task on operators and decision making
+
+1. Check whether a number is even or odd
+
+Sample input: 10, 7
+
+Hint: Use modulo operator % (number % 2). If result is 0 → even, else → odd.
+
+2. Take two numbers and print which is greater
+
+Sample input: 15 20, 50 50
+
+Hint: Use if, elif, else and comparison operators -gt, -lt, -eq.
+
+3. Check if a number is positive, negative, or zero
+
+Sample input: 25, -8, 0
+
+Hint: Compare with 0 using -gt and -lt.
+
+4. Check if a string is empty or not
+
+Sample input: Hello, `` (empty string)
+
+Hint: Use [ -z "$string" ] to check if length is zero.
+
+5. Check if a number is divisible by 5
+
+Sample input: 25, 18
+
+Hint: Use modulo operator % (number % 5). If result is 0 → divisible.
+
+6. Compare two strings for equality
+
+Sample input: apple apple, banana mango
+
+Hint: Use = inside [ ] (e.g., [ "$str1" = "$str2" ]).
+
+7. Check if a number is within the range 1 to 100
+
+Sample input: 50, 0, 150
+
+Hint: Use logical AND operator -a in [ ] to combine two conditions.
+
+8. Check if the user is root (UID check)
+
+Sample input: No input needed
+
+Hint: Check $UID. Root user has UID 0.
+
+9. Check if the first number is a multiple of the second
+
+Sample input: 20 5, 14 3
+
+Hint: Use modulo operator %. If num1 % num2 == 0, it’s a multiple.
+
+10. Check if the length of a string is greater than 5
+
+Sample input: Sandeep, Hi
+
+Hint: Use ${#string} to get string length and compare with 5.

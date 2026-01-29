@@ -1,0 +1,152 @@
+GIT HUB.
+ksreddy195-beep
+
+Main branch A                 branch
+has upto date code            will make changes to upto date code.
+
+
+To create a repository in GitHub, we need to publish it from local.
+To get the repository added to the local machine, we need to clone it.
+To make changes anything in the repo 1.add the changes 2. commit the changes 3. push the changes. These 3 points are to make changes in the main branch.
+
+
+Gh issue list -----shows all the current issues list
+gh pr create   ------- used to create a pull request.
+git diff --- shows any difference
+git stash ---- temporarily hold the content (when trying to switch branches if any changes made in local)
+git stash pop --- to restore the file which was holded temporarily.
+git stash list --- shows all the stash (temporarirly holded files)
+git rebase  ---- to make changes from main to all the branches to make it sync with main.
+git rebase -i ------ to merge all the commits into single one.
+git log ----- shows all the
+
+
+
+Actions Tab:
+
+Workflows are to reduce the conflicts. to track our commits in a cleaner way. predictable release cycles.
+
+git workflows as follows:
+1.feature branch workflow
+2.git flow workflow
+3.forking workflow
+4.trunk based development workflow
+
+Feature branch workflow ---
+1. will get the copy from the main branch.
+2.create branch with name feature/update addition operation.
+3. once the feature is ready, create a PR and merge with main.
+
+below is the example:
+git checkout main
+git pull
+git checkout -b feature/login-api
+
+git add .
+git commit -m "Add login API"
+git push origin feature/login-api
+
+Git Flow Workflow:
+used in companies with structured releases.
+main: this is production related specific
+develop: to develop
+testing environment or staging environment.
+features/* (any name) -- new work or new feature.
+release/*  (which means ready to code base release) for example : release with AI or release without AI.
+hotfix/*  (if there is any issue in production, to mitigate they will roll back and do hot fix).
+for example:
+You start a feature:
+
+git checkout develop
+git checkout -b feature/payment
+
+
+When feature is done:
+
+Merge to develop
+
+Later merge to main
+
+Release Example
+
+git checkout develop
+git checkout -b release/v1.0
+
+
+After testing:
+
+Merge release/v1.0 → main
+
+Tag version: v1.0
+
+Merge back to develop.
+----------------------------------------------------------------------------------------------------
+
+
+Workflow #3 — Forking Workflow:
+
+Used mainly in Open Source projects.
+
+How
+
+You fork the repo (copy to your GitHub)
+
+Work on your fork
+
+Create pull request to original repo
+
+Example
+
+# Clone your own fork
+git clone https://github.com/yourname/project.git
+
+git checkout -b fix-typo
+# make edits
+git commit -am "Fix README typo"
+git push
+
+
+Then → PR to the original repository.
+
+Useful
+1. You don’t need direct access to original repo
+2. Maintainers review and approve.
+
+---
+Workflow #4 — Trunk Based Development:
+
+Used by companies like Google, Netflix.
+
+Rules
+
+Only one main branch: main
+
+Small, frequent commits
+
+Feature flags instead of long-lived branches
+
+Example:
+
+git checkout main
+git pull
+git checkout -b login-ui
+
+
+Work → Commit → Merge quickly
+
+No long living branches like release, develop, etc.
+
+Pros
+
+Fast delivery
+
+Minimal merging hell
+
+Great for CI/CD
+
+Cons
+
+Requires experienced devs
+
+Needs strong automation/testing....
+---

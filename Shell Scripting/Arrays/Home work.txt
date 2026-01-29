@@ -1,0 +1,53 @@
+Home work
+Arrays:
+1. What are arithmetic operators in shell scripting?
+2. Name any five arithmetic operators.
+3. What does the + operator do?
+4. What is the use of - operator?
+5. What does * operator do in arithmetic?
+6. What is the purpose of / operator?
+7. What does % (modulus) return?
+8. How to perform arithmetic in shell?
+
+(Using expr, $(( )), let)
+-----------------------------------------------------------------------------------------------------------------
+1A: + - * / %, expr, $ 
+2A: + - * / %
+3A: + operator does addition of two numbers. 
+4A: _ operator performs subtraction
+5A: * its used for multiplication.
+6A: / is used for division
+7A: it gives the remainder when performing divison
+8A: using expr , let and $ 
+
+
+
+-------------------------------------------------------
+arrays 
+1. What is an array in shell scripting?
+2. How do you declare an array in bash?
+
+Example:
+arr=(10 20 30)
+
+3. How do you access an element at index 1 of an array?
+4. How do you print all elements of an array?
+
+Using *
+
+Using @
+
+5. What is the difference between ${arr[*]} and ${arr[@]}?
+
+----------------------------------------------------------------------------------------------
+1A: it holds the multiple values. 
+2A: arr[0]=10
+    arr[1]=20
+    arr[2]=30 
+3A: echo ${arr[1]}	
+4A: echo ${arr[*][@]}
+5a: ${arr[*]} displays all in one single word
+    ${arr[@]} displays as a separate word. 
+-----------------------------------------------------------------------------------
+
+

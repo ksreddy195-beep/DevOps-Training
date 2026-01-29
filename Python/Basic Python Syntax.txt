@@ -1,0 +1,5 @@
+Python "Hello, World!"
+To start with Python programming, the very basic program is to print "Hello, World!" You can use the print() function. Below is an example of Python code to print "Hello, World!" −
+
+# Python code to print "Hello, World!"
+print ("Hello, World!")

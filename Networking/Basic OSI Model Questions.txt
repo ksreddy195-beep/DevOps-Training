@@ -1,0 +1,87 @@
+Basic OSI Model Questions
+
+What does OSI stand for?
+
+
+
+How many layers are there in the OSI model?
+
+
+
+Why is the OSI model important in networking?
+
+What is the correct order of the OSI layers from top to bottom?
+
+Which OSI layer is closest to the end user?
+
+
+Layer-Specific Questions
+
+Which OSI layer is responsible for data encryption and compression?
+
+At which OSI layer does HTTP operate?
+
+Which layer handles routing and logical addressing?
+
+Where does IP (Internet Protocol) belong in the OSI model?
+
+Which OSI layer uses MAC addresses?
+
+At which layer does TCP and UDP work?
+
+Which layer converts data into bits and signals?
+
+
+
+
+Device Mapping Questions
+
+Which OSI layer does a switch operate on?
+data link layer
+
+
+Which layer does a router operate on?
+network layer
+
+
+At which OSI layer does a firewall typically work?
+network layer and transport layer
+
+
+Where does a load balancer fit in the OSI model?
+application layer and transport layer
+---------------------------------------------------------------------
+Troubleshooting & Scenario Questions
+
+If a server is reachable by IP but not by hostname, which OSI layer is likely having an issue?
+application layer
+
+
+If a cable is unplugged, which OSI layer is affected?
+physical layer
+
+
+If packets are reaching the destination but data is corrupted, which layer should be checked?
+presentation layer
+
+At which OSI layer does SSL/TLS operate conceptually?
+presentation layer
+-------------------------------------------------------------------------------
+DevOps-Oriented Questions
+
+Which OSI layers are involved when accessing a Kubernetes service?
+application layer
+
+How does the OSI model help in network troubleshooting in production?
+by isolating the issues layer by layer.
+
+Which OSI layer is most relevant for Ingress and Load Balancers?
+application layer
+
+Where does DNS fit in the OSI model?
+application layer
+
+Which OSI layers are involved when using curl to call an API?
+application layer, TLS encryption, TCP, IP
+------------------------------------------------------------
+

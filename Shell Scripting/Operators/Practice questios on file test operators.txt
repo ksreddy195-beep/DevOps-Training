@@ -1,0 +1,224 @@
+1. -b file — Block Special File
+
+Definition:
+Checks whether the file is a block device such as a hard disk or USB drive that transfers data in fixed-size blocks.
+
+Syntax:
+[ -b filename ]
+
+Example:
+
+file="test"
+if [ -b $file ]; then
+    echo "Block special file"
+else
+    echo "Not a block special file"
+fi
+
+2. -c file — Character Special File
+
+Definition:
+Checks if the file is a character device like keyboard, mouse, or terminal that transfers data byte-by-byte.
+
+Syntax:
+[ -c filename ]
+
+Example:
+
+if [ -c $file ]; then
+    echo "Character special file"
+else
+    echo "Not a character special file"
+fi
+
+3. -d file — Directory
+
+Definition:
+Returns true if the given name refers to a directory.
+
+Syntax:
+[ -d filename ]
+
+Example:
+
+if [ -d $file ]; then
+    echo "Directory"
+else
+    echo "Not a directory"
+fi
+
+4. -f file — Regular File
+
+Definition:
+Checks whether the file is a normal data file (not a directory, device, or special file).
+
+Syntax:
+[ -f filename ]
+
+Example:
+
+if [ -f $file ]; then
+    echo "Regular file"
+else
+    echo "Not a regular file"
+fi
+
+5. -g file — SGID Bit Set
+
+Definition:
+Checks if a file has the Set Group ID (SGID) permission, meaning it inherits group permissions during execution.
+
+Syntax:
+[ -g filename ]
+
+Example:
+
+if [ -g $file ]; then
+    echo "SGID bit set"
+else
+    echo "SGID bit not set"
+fi
+
+6. -k file — Sticky Bit Set
+
+Definition:
+Checks whether the file or directory has the sticky bit, commonly used in shared directories like /tmp to restrict deletion.
+
+Syntax:
+[ -k filename ]
+
+Example:
+
+if [ -k $file ]; then
+    echo "Sticky bit set"
+else
+    echo "Sticky bit not set"
+fi
+
+7. -p file — Named Pipe (FIFO)
+
+Definition:
+Tests whether the file is a FIFO (named pipe) used for inter-process communication.
+
+Syntax:
+[ -p filename ]
+
+Example:
+
+if [ -p $file ]; then
+    echo "Named pipe"
+else
+    echo "Not a named pipe"
+fi
+
+8. -t fd — Terminal
+
+Definition:
+Checks if the given file descriptor is connected to a terminal device.
+
+Syntax:
+[ -t file_descriptor ]
+
+Example:
+
+if [ -t 0 ]; then
+    echo "Stdin is a terminal"
+else
+    echo "Stdin is not a terminal"
+fi
+
+9. -u file — SUID Bit Set
+
+Definition:
+Checks whether the file has the Set User ID (SUID) permission bit, allowing users to execute with file owner's permissions.
+
+Syntax:
+[ -u filename ]
+
+Example:
+
+if [ -u $file ]; then
+    echo "SUID bit set"
+else
+    echo "SUID bit not set"
+fi
+
+10. -r file — Readable
+
+Definition:
+Returns true if the file is readable by the current user.
+
+Syntax:
+[ -r filename ]
+
+Example:
+
+if [ -r $file ]; then
+    echo "Readable"
+else
+    echo "Not readable"
+fi
+
+11. -w file — Writable
+
+Definition:
+Checks if the file is writable by the current user.
+
+Syntax:
+[ -w filename ]
+
+Example:
+
+if [ -w $file ]; then
+    echo "Writable"
+else
+    echo "Not writable"
+fi
+
+12. -x file — Executable
+
+Definition:
+Checks if the file is executable by the current user.
+
+Syntax:
+[ -x filename ]
+
+Example:
+
+if [ -x $file ]; then
+    echo "Executable"
+else
+    echo "Not executable"
+fi
+
+13. -s file — Size > 0
+
+Definition:
+Checks if the file contains data (size is greater than zero).
+
+Syntax:
+[ -s filename ]
+
+Example:
+
+if [ -s $file ]; then
+    echo "File has data"
+else
+    echo "File is empty"
+fi
+
+14. -e file — Exists
+
+Definition:
+Checks if a file or directory exists in the filesystem.
+
+Syntax:
+[ -e filename ]
+
+Example:
+
+if [ -e $file ]; then
+    echo "File exists"
+else
+    echo "File does not exist"
+fi

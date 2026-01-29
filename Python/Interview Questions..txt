@@ -1,0 +1,301 @@
+Interview Questions.
+1. Python Variables
+
+Question:
+What is a Python variable and how is it created?
+
+Hint:
+Assignment operator is used.
+
+Output:
+A variable is created when a value is assigned to it using =.
+
+2. Python Data Types
+
+Question:
+How can you find the data type of a variable in Python?
+
+Hint:
+Use a built-in function.
+
+Output:
+type(variable_name)
+
+3. Python Numbers
+
+Question:
+What are the different numeric data types in Python?
+
+Hint:
+Think of whole numbers, decimals, and complex values.
+
+Output:
+int, float, complex
+
+4. Python Casting
+
+Question:
+How do you convert a float value 3.5 into an integer?
+
+Hint:
+Use type conversion.
+
+Output:
+int(3.5) → 3
+
+5. Python Strings
+
+Question:
+How do you find the length of a string?
+
+Hint:
+Built-in function.
+
+Output:
+len("Python") → 6
+
+6. Python Booleans
+
+Question:
+What will be the output of bool(0)?
+
+Hint:
+Zero represents false.
+
+Output:
+False
+
+7. Python Operators
+
+Question:
+Which operator is used for floor division?
+
+Hint:
+It gives quotient without decimal.
+
+Output:
+//
+
+8. Python Lists
+
+Question:
+How do you add an element to the end of a list?
+
+Hint:
+List method.
+
+Output:
+list.append(value)
+
+9. Python Tuples
+
+Question:
+Can a tuple be modified after creation?
+
+Hint:
+Think about immutability.
+
+Output:
+No, tuples are immutable.
+
+10. Python Sets
+
+Question:
+Why are sets faster than lists for membership testing?
+
+Hint:
+Data structure concept.
+
+Output:
+Sets use hashing, making lookup faster.
+
+11. Python Dictionaries
+
+Question:
+How do you access a value from a dictionary?
+
+Hint:
+Use keys.
+
+Output:
+dict[key]
+
+12. Python If...Else
+
+Question:
+Write a condition to check if a number is positive.
+
+Hint:
+Comparison operator.
+
+Output:
+
+if num > 0:
+    print("Positive")
+
+13. Python Match
+
+Question:
+Which Python version introduced match-case?
+
+Hint:
+Recent version.
+
+Output:
+Python 3.10
+
+14. Python While Loops
+
+Question:
+When does a while loop stop executing?
+
+Hint:
+Condition-based.
+
+Output:
+When the condition becomes False.
+
+15. Python For Loops
+
+Question:
+How do you iterate over a list?
+
+Hint:
+Loop syntax.
+
+Output:
+
+for item in my_list:
+    print(item)
+
+16. Python Functions
+
+Question:
+What keyword is used to define a function?
+
+Hint:
+Starts a function block.
+
+Output:
+def
+
+17. Python Range
+
+Question:
+What is the output of list(range(1,5))?
+
+Hint:
+End value excluded.
+
+Output:
+[1, 2, 3, 4]
+
+18. Python Arrays
+
+Question:
+Which module is commonly used for arrays in Python?
+
+Hint:
+Standard library.
+
+Output:
+array module
+
+19. Python Iterators
+
+Question:
+Which function returns the next item from an iterator?
+
+Hint:
+Iterator method.
+
+Output:
+next()
+
+20. Python Modules
+
+Question:
+How do you import a module named math?
+
+Hint:
+Import statement.
+
+Output:
+import math
+
+21. Python Dates
+
+Question:
+Which module is used to work with dates?
+
+Hint:
+Standard library.
+
+Output:
+datetime
+
+22. Python Math
+
+Question:
+How do you find the square root of a number?
+
+Hint:
+Math module function.
+
+Output:
+math.sqrt(16) → 4.0
+
+23. Python JSON
+
+Question:
+Which function converts JSON string to Python object?
+
+Hint:
+json module.
+
+Output:
+json.loads()
+
+24. Python RegEx
+
+Question:
+Which module is used for regular expressions?
+
+Hint:
+Short name.
+
+Output:
+re
+
+25. Python PIP
+
+Question:
+What is the command to install a package using pip?
+
+Hint:
+Terminal command.
+
+Output:
+pip install package_name
+
+26. Python Try...Except
+
+Question:
+What is the purpose of try-except?
+
+Hint:
+Error handling.
+
+Output:
+To handle runtime exceptions without crashing the program.
+
+27. Python String Formatting
+
+Question:
+Which method is recommended for string formatting in modern Python?
+
+Hint:
+Uses f.
+
+Output:
+f-strings (f"Hello {name}")

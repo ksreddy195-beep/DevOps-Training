@@ -1,0 +1,50 @@
+Special Variables:
+1.The $ character represents the process ID number, or PID, of the current shell −
+
+Command: $echo $$
+The above command writes the PID of the current shell −
+
+---
+**2. $0     $0-**it displays the current name of the shell script.
+   $n      -These variables correspond to the arguments with which a script was invoked. Here n is a positive decimal number corresponding to the position of an argument (the first argument                   is $1, the second argument is $2, and so on).
+   $#      - it shows the number arguments supplied to a script
+   $*      - adjusts arguments in double quotes.
+   $@      -
+---
+Command line arguments:
+The command-line arguments $1, $2, $3, ...$9 are positional parameters, with $0 pointing to the actual command, program, shell script, or function and $1, $2, $3, ...$9 as the arguments to the command.
+
+Example code:
+#!/bin/sh
+
+echo "File Name: $0"
+echo "First Parameter : $1"
+echo "Second Parameter : $2"
+echo "Quoted Values: $@"
+echo "Quoted Values: $*"
+echo "Total Number of Parameters : $#"
+
+---
+Special Parameters:
+Special Parameters $* and $@
+There are special parameters that allow accessing all the command-line arguments at once. $* and $@ both will act the same unless they are enclosed in double quotes, "".
+
+---
+Exit Status:
+The $? variable represents the exit status of the previous command.
+
+Exit status is a numerical value returned by every command upon its completion. As a rule, most commands return an exit status of 0 if they were successful, and 1 if they were unsuccessful.
+
+Exit Code	Meaning
+0	Success
+1	General error
+2	Misuse of shell builtins (missing arguments, syntax error)
+126	Command found but not executable
+127	Command not found
+128	Invalid exit argument
+130	Script terminated by Ctrl+C (SIGINT)
+137	Killed (SIGKILL)
+139	Segmentation fault
+143	Terminated (SIGTERM)
+
+---

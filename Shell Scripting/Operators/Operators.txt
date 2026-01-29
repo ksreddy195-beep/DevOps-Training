@@ -1,0 +1,212 @@
+Operators:
+operators are symbols or keywords that perform actions on values or variables.
+They are used for:
+
+Arithmetic Operators
+Relational Operators
+Boolean Operators
+String Operators
+File Test Operators
+
+Operand:
+An operand is the value or variable on which the operator performs the action.
+
+example:
+username="satish"
+
+here = is operator and username is operand.
+operator works on operand.
+---
+Arithmetic Operators:
+the following example shows how to add two numbers −
+
+#!/bin/sh
+
+val=`expr 2 + 2`
+echo "Total value : $val"
+The above script will generate the following result −
+
+Total value : 4
+The following points need to be considered while adding −
+
+There must be spaces between operators and expressions. For example, 2&plus;2 is not correct; it should be written as 2 &plus; 2.
+
+The complete expression should be enclosed between , called the backtick.
+
+---
+
+Relational Operators:
+operators do not work for string values unless their value is numeric.
+
+For example, following operators will work to check a relation between 10 and 20 as well as in between "10" and "20" but not in between "ten" and "twenty".
+
+Assume variable a holds 10 and variable b holds 20 then −
+
+Arithmetic Comparison Operators in Shell Script
+
+-eq
+Checks if two operand values are equal.
+Example: [ $a -eq $b ] → false
+
+-ne
+Checks if two operand values are not equal.
+Example: [ $a -ne $b ] → true
+
+-gt
+Checks if the left operand is greater than the right operand.
+Example: [ $a -gt $b ] → false
+
+-lt
+Checks if the left operand is less than the right operand.
+Example: [ $a -lt $b ] → true
+
+-ge
+Checks if the left operand is greater than or equal to the right operand.
+Example: [ $a -ge $b ] → false
+
+-le
+Checks if the left operand is less than or equal to the right operand.
+Example: [ $a -le $b ] → true
+
+---
+Logical Operators:
+1 && 1 = 1
+1 && 0 = 0
+0 && 1 = 0
+0 && 0 = 0
+1 || 1 = 1
+1 || 0 = 1
+0 || 0 = 0
+0 || 1 = 1
+
+we can also represtn && in -a and || in -o
+
+1 != 0
+0 != 1
+
+---
+Syntax:
+
+-eq (equal to)
+
+Syntax:
+
+[ value1 -eq value2 ]
+
+
+Meaning: True if both numbers are equal.
+
+Example:
+
+a=10
+b=10
+
+if [ $a -eq $b ]; then
+    echo "a is equal to b"
+fi
+
+
+-ne (not equal to)
+
+Syntax:
+
+[ value1 -ne value2 ]
+
+
+Meaning: True if numbers are NOT equal.
+
+Example:
+
+a=10
+b=20
+
+if [ $a -ne $b ]; then
+    echo "a is not equal to b"
+fi
+
+
+-gt (greater than)
+
+Syntax:
+
+[ value1 -gt value2 ]
+
+
+Meaning: True if the left number is greater.
+
+Example:
+
+a=15
+b=10
+
+if [ $a -gt $b ]; then
+    echo "a is greater than b"
+fi
+
+
+-lt (less than)
+
+Syntax:
+
+[ value1 -lt value2 ]
+
+
+Meaning: True if the left number is smaller.
+
+Example:
+
+a=5
+b=10
+
+if [ $a -lt $b ]; then
+    echo "a is less than b"
+fi
+
+
+-ge (greater than or equal to)
+
+Syntax:
+
+[ value1 -ge value2 ]
+
+
+Meaning: True if the left number is greater than or equal to the right.
+
+Example:
+
+a=10
+b=10
+
+if [ $a -ge $b ]; then
+    echo "a is greater or equal to b"
+fi
+
+
+-le (less than or equal to)
+
+Syntax:
+
+[ value1 -le value2 ]
+
+
+Meaning: True if the left number is less than or equal to the right.
+
+Example:
+
+a=8
+b=10
+
+if [ $a -le $b ]; then
+    echo "a is less or equal to b"
+fi
+
+
+Bonus: Using double brackets [[ ]]
+
+Double brackets allow arithmetic comparisons more cleanly.
+
+Example:
+
+if (( a > b )); then
+    echo "a is greater"
+fi

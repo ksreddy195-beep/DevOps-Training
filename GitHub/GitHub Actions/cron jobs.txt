@@ -1,0 +1,8 @@
+cron job syntax:
+
+"*****"
+1.* from left 1st start is meant for minutes in UTC format (0-59)
+2.* is meant for hours (0-23)
+3.* is meant for day of month like (1-31)
+4.* is meant for months (1-12)
+5.* is meant for day of week (0-6 or SUN-SAT)

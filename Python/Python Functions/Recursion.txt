@@ -1,0 +1,176 @@
+Recursion in Python
+Definition
+
+Recursion is a programming technique where a function calls itself to solve a problem by breaking it into smaller subproblems.
+
+It is commonly used in problems that can be divided into similar sub-tasks, such as mathematical computations, tree traversal, and list processing.
+
+Important Points
+
+A recursive function must have a stopping condition
+
+Without a stopping condition, recursion will run forever and cause a stack overflow error
+
+Recursion can be elegant and efficient when used correctly
+
+Poorly written recursion can consume excessive memory and CPU
+---------------------------------------------------------------------------
+
+Parts of a Recursive Function
+
+Every recursive function has two essential parts:
+
+1. Base Case
+
+Condition that stops the recursion
+
+Prevents infinite function calls
+
+2. Recursive Case
+
+The function calls itself with a modified argument
+
+Moves the problem closer to the base case
+
+Example 1: Countdown Using Recursion
+Code
+def countdown(n):
+    if n <= 0:
+        print("Done!")
+    else:
+        print(n)
+        countdown(n - 1)
+
+countdown(5)
+
+Explanation
+
+Base case: n <= 0
+
+Recursive case: countdown(n - 1)
+
+Output
+5
+4
+3
+2
+1
+Done!
+
+Example 2: Factorial of a Number
+Definition
+
+Factorial of a number n is:
+
+n! = n × (n-1) × (n-2) × ... × 1
+
+Code
+def factorial(n):
+    # Base case
+    if n == 0 or n == 1:
+        return 1
+    # Recursive case
+    else:
+        return n * factorial(n - 1)
+
+print(factorial(5))
+
+Output
+120
+
+How it works
+factorial(5)
+= 5 × factorial(4)
+= 5 × 4 × factorial(3)
+= 5 × 4 × 3 × 2 × 1
+= 120
+-----------------------------------------------------
+Fibonacci Sequence
+Definition
+
+Each number is the sum of the two previous numbers.
+
+Sequence:
+
+0, 1, 1, 2, 3, 5, 8, 13, ...
+
+Example 3: Fibonacci Using Recursion
+Code
+def fibonacci(n):
+    if n <= 1:
+        return n
+    else:
+        return fibonacci(n - 1) + fibonacci(n - 2)
+
+print(fibonacci(7))
+
+Output
+13
+
+Explanation
+fibonacci(7) = fibonacci(6) + fibonacci(5)
+             = 8 + 5
+             = 13
+-----------------------------------------------------------------------------------------
+
+Recursion with Lists
+
+Recursion can process lists by handling one element at a time.
+
+Example 4: Sum of Elements in a List
+Code
+def sum_list(numbers):
+    if len(numbers) == 0:
+        return 0
+    else:
+        return numbers[0] + sum_list(numbers[1:])
+
+my_list = [1, 2, 3, 4, 5]
+print(sum_list(my_list))
+
+Output
+15
+------------------------------------------------------------------------------------------
+Example 5: Find Maximum Value in a List
+Code
+def find_max(numbers):
+    if len(numbers) == 1:
+        return numbers[0]
+    else:
+        max_of_rest = find_max(numbers[1:])
+        return numbers[0] if numbers[0] > max_of_rest else max_of_rest
+
+my_list = [3, 7, 2, 9, 1]
+print(find_max(my_list))
+
+Output
+9
+--------------------------------------------------------------------
+Recursion Depth Limit in Python
+
+Python limits how deep recursion can go to prevent memory issues.
+
+Default Limit Check
+import sys
+print(sys.getrecursionlimit())
+
+Output (may vary)
+1000
+
+Increasing Recursion Limit (Use with Caution)
+import sys
+sys.setrecursionlimit(2000)
+print(sys.getrecursionlimit())
+
+Output
+2000
+------------------------------------------------------------------------
+Key Takeaways
+
+Always define a base case
+
+Ensure recursion moves toward the base case
+
+Recursion is powerful but should be used carefully
+
+For very deep recursion, iterative solutions are often safer

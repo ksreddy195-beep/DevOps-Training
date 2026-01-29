@@ -1,0 +1,11 @@
+push: whenever a push happens to the defined branch automation gets triggered.
+pull : when a pull request has been raised to a defined branch, automation gets triggered.
+workflow dispatch: manual trigger.
+schedule: cron job based on time that we set.
+create: triggers when a branch or tag is created.
+delete: triggers when branch or tag is deleted.
+release: Events: created, published, edited, pre released
+Example:
+on:
+  release:
+    types: [published, created].

@@ -1,0 +1,211 @@
+1. What is Redirection?
+
+By default:
+
+Input → comes from the keyboard (STDIN)
+
+Output → goes to the terminal (STDOUT)
+
+Errors → go to the terminal (STDERR)
+
+Redirection allows you to change this default behavior:
+
+Send output to a file
+
+Take input from a file
+
+Suppress output
+
+Combine outputs
+
+2. Output Redirection (> and >>)
+> : Redirect output to a file (overwrite)
+
+Sends command output to a file.
+If the file exists, its contents are deleted.
+
+who > users
+
+
+Output does not appear on the screen
+
+Output is saved in users
+
+Check the file:
+
+cat users
+
+
+Example overwrite:
+
+echo "line 1" > users
+
+
+Result:
+
+line 1
+
+>> : Append output to a file
+
+Adds output without removing existing content.
+
+echo "line 2" >> users
+
+
+Result:
+
+line 1
+line 2
+
+3. Input Redirection (<)
+
+Takes input from a file instead of the keyboard.
+
+Normal command
+wc -l users
+
+
+Output:
+
+2 users
+
+With input redirection
+wc -l < users
+
+
+Output:
+
+2
+
+Why the difference?
+
+With filename → wc knows the file name
+
+With < → wc reads from STDIN, so no filename is shown
+
+4. Here Document (<<)
+
+Used to provide multi-line input to a command or script.
+
+Syntax
+command << delimiter
+input text
+delimiter
+
+
+Shell reads input until it finds the delimiter
+
+Input is passed to the command’s STDIN
+
+Example: Counting lines
+wc -l << EOF
+This is a simple lookup program
+for good (and bad) restaurants
+in Cape Town.
+EOF
+
+
+Output:
+
+3
+
+Example: Printing multiple lines
+#!/bin/sh
+
+cat << EOF
+This is a simple lookup program
+for good (and bad) restaurants
+in Cape Town.
+EOF
+
+
+Output:
+
+This is a simple lookup program
+for good (and bad) restaurants
+in Cape Town.
+
+Automating interactive programs (vi example)
+#!/bin/sh
+
+filename=test.txt
+vi $filename << EndOfCommands
+
+This file was created automatically from
+a shell script
+^[
+ZZ
+EndOfCommands
+
+
+Automates vi input
+
+^[ means ESC key
+
+ZZ saves and exits
+
+5. Discarding Output (/dev/null)
+Discard standard output
+command > /dev/null
+
+
+Output is thrown away
+
+Discard both output and errors
+command > /dev/null 2>&1
+
+
+Explanation:
+
+1 → STDOUT
+
+2 → STDERR
+
+2>&1 → redirect errors to output
+
+Output already goes to /dev/null
+
+Send output to STDERR
+echo "Error message" 1>&2
+
+
+Useful for error logging
+
+6. File Descriptors
+Descriptor	Meaning
+0	Standard Input (STDIN)
+1	Standard Output (STDOUT)
+2	Standard Error (STDERR)
+7. Redirection Operators Summary
+No	Command	Description
+1	pgm > file	Redirect output to file (overwrite)
+2	pgm < file	Read input from file
+3	pgm >> file	Append output to file
+4	n > file	Redirect descriptor n output
+5	n >> file	Append descriptor n output
+6	n >& m	Merge output from n to m
+7	n <& m	Merge input from m to n
+8	<< tag	Here document
+9	`	`
+8. Pipe (|)
+
+Sends output of one command as input to another.
+
+ls | wc -l
+
+
+ls output → wc -l input
+
+9. Key Takeaways
+
+> overwrites, >> appends
+
+< takes input from a file
+
+<< provides multi-line input
+
+/dev/null discards output
+
+2>&1 combines error and output
+
+Pipes connect commands

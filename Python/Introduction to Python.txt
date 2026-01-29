@@ -1,0 +1,60 @@
+Python is one of the most popular programming languages. It’s simple to use, packed with features and supported by a wide range of libraries and frameworks. Its clean syntax makes it beginner-friendly.
+
+A high-level language, used in data science, automation, AI, web development and more.
+Known for its readability, which means code is easier to write, understand and maintain.
+Backed by strong library support, we don’t have to build everything from scratch.
+
+Differences Between Shell Scripting and Python
+
+Purpose
+Shell scripting is mainly used to automate operating system tasks and run system commands.
+Python is a general-purpose programming language used to build applications, tools, and services.
+
+Type of Work
+Shell scripts are best suited for system administration tasks like file handling, process control, and command chaining.
+Python is used for automation, data processing, web development, APIs, machine learning, and more.
+
+Complexity Handling
+Shell scripting becomes difficult to manage when the logic gets complex.
+Python handles complex logic easily with clear syntax and structure.
+
+Readability
+Shell scripts are readable when they are small but quickly become confusing as they grow.
+Python code remains readable and organized even for large programs.
+
+Data Structures
+Shell scripting has very limited data handling capabilities.
+Python provides rich data structures such as lists, dictionaries, sets, and classes.
+
+Error Handling
+Error handling in shell scripts is limited and inconsistent.
+Python provides strong and clean error handling using try and except.
+
+Debugging
+Debugging shell scripts is difficult and mostly manual.
+Python offers better debugging tools and clearer error messages.
+
+Libraries and Modules
+Shell scripting relies heavily on external Unix commands.
+Python has a huge standard library and third-party modules for almost every task.
+
+Portability
+Shell scripts are mostly tied to Unix or Linux environments.
+Python programs can run on Windows, macOS, and Linux with little or no change.
+
+Scalability
+Shell scripting does not scale well for large projects.
+Python scales very well and is suitable for long-term projects.
+
+Maintainability
+Maintaining large shell scripts is difficult.
+Python code is easier to maintain, update, and extend.
+
+Real-world Usage
+Shell scripting is commonly used by system administrators and DevOps engineers.
+Python is used across industries including software development, data science, automation, and AI.
+
+Final Summary
+
+Shell scripting is ideal for quick system automation and command execution.
+Python is better suited for building complex, maintainable, and scalable programs.

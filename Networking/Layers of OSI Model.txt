@@ -1,0 +1,17 @@
+Layers:
+
+Application Layer
+
+presentation layer
+
+session layer
+
+Transport Layer
+
+network layer
+
+Data Link layer
+
+Physical layer
+
+

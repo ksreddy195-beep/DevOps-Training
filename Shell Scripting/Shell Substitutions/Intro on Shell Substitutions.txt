@@ -1,0 +1,202 @@
+Substitution in shell script:
+What is Substitution?
+
+Substitution is a process where the shell replaces special expressions with their corresponding values before executing a command.
+
+Shell performs substitution when it encounters:
+
+Variables
+
+Commands
+
+Special characters (escape sequences)
+
+1. Escape Sequence Substitution (Using echo)
+Definition
+
+Escape sequence substitution allows special characters preceded by \ to be interpreted and replaced with their actual meaning.
+
+Syntax
+echo -e "string"
+
+
+The -e option enables interpretation of escape characters.
+
+Example
+#!/bin/sh
+a=10
+echo -e "Value of a is $a \n"
+
+Output
+Value of a is 10
+
+
+Without -e:
+
+echo "Value of a is $a \n"
+
+
+Output:
+
+Value of a is 10\n
+
+Common Escape Sequences
+Escape	Description
+\\	Backslash
+\a	Alert (bell sound)
+\b	Backspace
+\c	Suppress trailing newline
+\f	Form feed
+\n	New line
+\r	Carriage return
+\t	Horizontal tab
+\v	Vertical tab
+Options Used with echo
+Option	Description
+-e	Enable escape sequence interpretation
+-E	Disable escape sequence interpretation (default)
+-n	Do not print new line
+
+2. Command Substitution
+Definition
+
+Command substitution allows the output of a command to replace the command itself.
+
+Syntax
+`command`
+
+
+Note:
+
+Use backquotes (`), not single quotes (').
+
+Modern alternative (recommended):
+
+$(command)
+
+Example 1: Assign command output to a variable
+#!/bin/sh
+DATE=`date`
+echo "Date is $DATE"
+
+Output
+Date is Thu Jul  2 03:59:57 MST 2009
+
+Example 2: Count logged-in users
+USERS=`who | wc -l`
+echo "Logged in users are $USERS"
+
+Output
+Logged in users are 1
+
+Example 3: Multiple commands
+UP=`date ; uptime`
+echo "Uptime is $UP"
+
+Output
+Uptime is Thu Jul  2 03:59:57 MST 2009
+03:59:57 up 20 days, 14:03, 1 user, load avg: 0.13, 0.07, 0.15
+
+3. Variable Substitution
+Definition
+
+Variable substitution allows you to check, assign, or modify variables based on whether they are set or unset.
+
+Variable Substitution Forms
+1. ${var}
+
+Definition: Replaces with the value of var.
+
+Example
+
+name="Linux"
+echo ${name}
+
+
+Output:
+
+Linux
+
+2. ${var:-word}
+
+Definition:
+If var is unset or null, substitute word.
+The value of var does not change.
+
+Example
+
+echo ${var:-"Variable is not set"}
+
+3. ${var:=word}
+
+Definition:
+If var is unset or null, assign word to var.
+
+Example
+
+echo ${var:="Variable is not set"}
+echo $var
+
+4. ${var:?message}
+
+Definition:
+If var is unset or null, print message to standard error and stop execution.
+
+Example
+
+echo ${var:?"Variable must be set"}
+
+5. ${var:+word}
+
+Definition:
+If var is set, substitute word.
+If not set, substitute nothing.
+
+Example
+
+var="Hello"
+echo ${var:+"This is default value"}
+
+
+Output:
+
+This is default value
+
+Complete Example Demonstrating All Cases
+#!/bin/sh
+
+echo ${var:-"Variable is not set"}
+echo "1 - Value of var is ${var}"
+
+echo ${var:="Variable is not set"}
+echo "2 - Value of var is ${var}"
+
+unset var
+echo ${var:+"This is default value"}
+echo "3 - Value of var is $var"
+
+var="Prefix"
+echo ${var:+"This is default value"}
+echo "4 - Value of var is $var"
+
+echo ${var:?"Print this message"}
+echo "5 - Value of var is ${var}"
+
+Output Explanation
+Variable is not set
+1 - Value of var is
+
+Variable is not set
+2 - Value of var is Variable is not set
+
+3 - Value of var is
+This is default value
+4 - Value of var is Prefix
+Prefix
+5 - Value of var is Prefix
+
+Summary
+Type	Purpose
+Escape Substitution	Interpret special characters
+Command Substitution	Replace command with output
+Variable Substitution	Handle unset/null variables safely

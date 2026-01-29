@@ -1,0 +1,300 @@
+Task 1:
+Write a shell script to:
+
+Store your name and age in variables
+
+Print them in one sentence.
+
+Task 2:
+Take two numbers as variables and:
+
+Print their sum, difference, product, and division
+
+Task 3:
+Store today’s date in a variable and print:
+
+Today’s date is: <date>
+
+Task 4:
+Create a variable DIR=/home and:
+
+Print the variable
+
+Check if the directory exists (print only yes/no)
+---
+Task 5:
+Write a script that:
+
+Takes two numbers
+
+Checks which one is greater using relational operators
+---
+Task 6:
+Check if a file:
+
+Exists
+
+Is readable
+
+Is writable
+---
+Task 7:
+Use logical operators (-a, -o, &&, ||) to:
+
+Check if a number is between 10 and 50
+
+---
+Decision Making Tasks:
+Decision Making (if / case) – Tasks
+Task 8:
+Write a script to:
+
+Check whether a number is positive, negative, or zero
+
+
+---
+Loops – Tasks
+
+Task 11:
+Print numbers from 1 to 10 using:
+
+for loop
+
+while loop
+
+---
+Task 12:
+Print only even numbers from 1 to 50
+
+---
+Task 13:
+
+take the table number as an input from the user and print that table till 10th index.
+
+---
+Task 14:
+Read a file line by line and print each line with line number
+
+Example:
+#!/bin/sh
+
+file="input.txt"
+line_no=1
+
+while IFS= read -r line
+do
+    echo "$line_no: $line"
+    line_no=$((line_no + 1))
+done < "$file"
+
+Here IFS is Internal Field Separator
+---
+Functions – Tasks
+Task 15:
+Create a function greet() that prints:
+
+Hello, welcome to shell scripting
+
+---
+ask 16:
+Create a function is_even():
+
+Accept a number
+
+Return whether it is even or odd
+
+---
+Task 17:
+Create a function that:
+
+Accepts a filename
+
+Prints file size and permissions
+
+file_info() {
+    file="$1"
+
+    if [ ! -e "$file" ]; then
+        echo "File does not exist"
+        return 1
+    fi
+
+    size=$(stat -c %s "$file" 2>/dev/null || stat -f %z "$file")
+    perms=$(stat -c %A "$file" 2>/dev/null || stat -f %Sp "$file")
+
+    echo "File: $file"
+    echo "Size: $size bytes"
+    echo "Permissions: $perms"
+}
+
+---
+other approach to above one:
+
+file_info() {
+    file="$1"
+
+    if [ ! -e "$file" ]; then
+        echo "File does not exist"
+        return 1
+    fi
+
+    size=$(ls -lh "$file" | awk '{print $5}')
+    perms=$(ls -l "$file" | awk '{print $1}')
+
+    echo "File: $file"
+    echo "Size: $size"
+    echo "Permissions: $perms"
+}
+
+
+awk '{print $5}'
+
+awk splits the line into fields (columns) using spaces
+
+Field numbers:
+
+$1 → permissions
+$2 → hard links
+$3 → owner
+$4 → group
+$5 → size
+$6 → month
+$7 → day
+$8 → time/year
+$9 → filename
+
+---
+Variables + Decision Making
+
+Task 18:
+Take a number from the user and check:
+
+If the number is divisible by 5, print:
+Divisible by 5
+
+Otherwise, print:
+Not divisible
+
+Hints:
+
+Use read to take input from the user
+
+Use arithmetic expansion $(( ))
+
+Use the modulo operator %
+
+Use if, then, else
+
+Decision Making + Loops
+---
+Task 19:
+Print numbers from 1 to 100 with the following rules:
+
+Skip numbers that are multiples of 3
+
+Print "Fizz" for numbers that are multiples of 5
+
+Print the number normally for all other values
+
+Hints:
+
+Use for or while loop
+
+Use % operator to check divisibility
+
+Use continue to skip loop iterations
+
+Check conditions in the correct order
+------------------------------------------------------------------------------------------------------------------------------------------
+Task 20:
+Loop through numbers from 1 to 50 and:
+
+Count how many numbers are even
+
+Count how many numbers are odd
+
+Print both counts at the end
+
+Hints:
+
+Initialize counters before the loop
+
+Use % 2 to check even or odd
+
+Increment counters using $(( ))
+
+Print results after the loop finishes
+
+Loops + Files + Decision Making
+
+
+
+-----------------------------------------------------------------
+
+Task 21:
+Loop through all .txt files in a directory and:
+
+Print the file name
+
+Print whether the file is empty or not
+
+Hints:
+
+Use for file in *.txt
+
+
+Check if the file exists before processing
+
+Use -s to check file size
+
+Use if condition
+---------------------------------------------------------------------------------
+Task 22:
+Read usernames from a file (one username per line) and:
+
+Check if each user exists in the system
+
+Print a message for each user
+
+Hints:
+
+Use while read loop
+
+Use the id command
+
+Redirect errors to /dev/null
+
+Use $? to check command exit status
+
+Functions + Loops + Decision Making
+
+Task 23:
+Create a function named check_file() that:
+
+Accepts a filename as input
+
+Prints whether the file:
+
+Exists
+
+Is readable
+
+Is writable
+
+Then:
+
+Loop through all files in a directory
+
+Call the check_file function for each file
+
+Hints:
+
+Use $1 to access function arguments
+
+Use -e, -r, -w file test operators
+
+Use for file in *
+
+Call the function using check_file "$file"
+
+---

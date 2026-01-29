@@ -1,0 +1,131 @@
+Decision Making:
+Decision-making statements allow the script to:
+Check conditions
+Compare values
+Execute commands based on True/False results
+Control program flow
+
+
+While writing a shell script, there may be a situation when you need to adopt one path out of the given two paths. So you need to make use of conditional statements that allow your program to make correct decisions and perform the right actions.
+
+Unix Shell supports conditional statements which are used to perform different actions based on different conditions. We will now understand two decision-making statements here −
+
+The if...else statement
+
+The case...esac statement
+
+The if...else statements
+If else statements are useful decision-making statements which can be used to select an option from a given set of options.
+
+Unix Shell supports following forms of ifelse statement −
+
+if...fi statement
+if...else...fi statement
+if...elif...else...fi statement
+Most of the if statements check relations using relational operators discussed in the previous chapter.
+
+The case...esac Statement
+You can use multiple if...elif statements to perform a multiway branch. However, this is not always the best solution, especially when all of the branches depend on the value of a single variable.
+
+Unix Shell supports case...esac statement which handles exactly this situation, and it does so more efficiently than repeated if...elif statements.
+
+There is only one form of case...esac statement which has been described in detail here −
+
+case...esac statement
+The case...esac statement in the Unix shell is very similar to the switch...case statement we have in other programming languages like C or C++ and PERL, etc.
+
+---
+Syntax:
+if statement:
+
+if [ condition ]
+then
+    commands
+fi
+
+Example
+if [ $a -gt $b ]
+then
+    echo "$a is greater than $b"
+fi
+---
+If else statement:
+Syntax
+if [ condition ]
+then
+    commands
+else
+    commands
+fi
+
+Example
+if [ $age -ge 18 ]
+then
+    echo "Eligible to vote"
+else
+    echo "Not eligible"
+fi
+if elif else ladder:
+Syntax
+if [ condition1 ]
+then
+    commands
+elif [ condition2 ]
+then
+    commands
+else
+    commands
+fi
+
+Example
+if [ $marks -ge 90 ]
+then
+    echo "Grade A"
+elif [ $marks -ge 75 ]
+then
+    echo "Grade B"
+else
+    echo "Grade C"
+fi
+---
+Nested if:
+Syntax
+if [ condition1 ]
+then
+    if [ condition2 ]
+    then
+        commands
+    fi
+fi
+
+Example
+if [ $a -gt 0 ]
+then
+    if [ $b -gt 0 ]
+    then
+        echo "Both are positive numbers"
+    fi
+fi
+---
+switch case:
+Syntax
+case $variable in
+    pattern1)
+        commands ;;
+    pattern2)
+        commands ;;
+    *)
+        default commands ;;
+esac
+
+Example
+echo "Enter a number:"
+read num
+
+case $num in
+    1) echo "One" ;;
+    2) echo "Two" ;;
+    3) echo "Three" ;;
+    *) echo "Invalid number" ;;
+esac
+---

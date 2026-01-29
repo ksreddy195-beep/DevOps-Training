@@ -1,0 +1,5 @@
+def my_function(title, *args, **kwargs):
+  print("title:", title)
+  print("positional arguments:", args)
+  print("keyword arguments:", kwargs)
+my_function("user info", "emil", "tobis", age =25, city = "oslo")

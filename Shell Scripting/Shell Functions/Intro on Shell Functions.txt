@@ -1,0 +1,92 @@
+1. What is a Function?
+
+A function is a named block of commands that performs a particular task.
+
+Instead of writing the same commands again and again, we write once inside a function and use it many times.
+
+Without function (problem)
+echo "Starting backup"
+tar -czf backup.tar.gz /home/user
+echo "Backup completed"
+
+echo "Starting backup"
+tar -czf backup.tar.gz /home/user
+echo "Backup completed"
+
+
+Same code is repeated.
+
+With function (solution)
+backup() {
+    echo "Starting backup"
+    tar -czf backup.tar.gz /home/user
+    echo "Backup completed"
+}
+
+backup
+backup
+
+
+The function avoids repetition.
+----------------------------------------------------------------------------------------------------------------------------------------------------
+Why Do We Need Functions?
+
+Functions help us to:
+
+Reduce duplicate code
+
+Make scripts easy to read
+
+Organize logic clearly
+
+Modify code in one place
+
+Debug easily
+-----------------------------------------------------------------------------------------------
+Basic Function Syntax
+
+There are two correct ways to define a function.
+
+Method 1
+function_name() {
+    commands
+}
+
+Method 2
+function function_name() {
+    commands
+}
+
+
+Both are valid.
+Beginners should use Method 1.
+
+Important rules:
+
+No space between function name and ()
+
+Curly braces { } are mandatory
+
+Function must be defined before calling it
+------------------------------------------------------------------------------------------------
+Your First Function
+#!/bin/sh
+
+hello() {
+    echo "Hello World"
+}
+
+hello
+
+Explanation:
+
+hello is the function name
+
+Code inside { } runs when function is called
+
+hello calls the function
+
+Output:
+
+Hello World
+-------------------------------------------------------------------------------------------------------

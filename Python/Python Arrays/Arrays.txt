@@ -1,0 +1,97 @@
+Arrays in Python (Using Lists)
+Important Note
+
+Python does not have built-in array support like some other languages.
+Instead, lists are commonly used as arrays.
+For advanced array operations, libraries like NumPy are used.
+
+What is an Array?
+
+An array is a special variable that can store multiple values in a single variable.
+
+Example (Array using List)
+cars = ["Ford", "Volvo", "BMW"]
+
+
+Without arrays:
+
+car1 = "Ford"
+car2 = "Volvo"
+car3 = "BMW"
+
+
+Using arrays makes it easier to:
+
+Store large amounts of data
+
+Loop through values
+
+Search or modify elements efficiently
+----------------------------------------------------------------------------------
+Accessing Array Elements
+
+Array elements are accessed using index numbers (starting from 0).
+
+x = cars[0]   # Access first element
+
+Modifying an Element
+cars[0] = "Toyota"
+--------------------------------------------------------------------------------
+
+Length of an Array
+
+Use the len() function to find the number of elements.
+
+x = len(cars)
+
+
+Note:
+The length of an array is always one more than the highest index.
+------------------------------------------------------------
+
+Looping Through an Array
+
+Use a for loop to iterate through all elements.
+
+for car in cars:
+    print(car)
+-------------------------------------------------------------
+Adding Elements to an Array
+
+Use the append() method to add an element at the end.
+
+cars.append("Honda")
+
+Removing Elements from an Array
+Remove by Index (pop)
+cars.pop(1)   # Removes second element
+
+Remove by Value (remove)
+cars.remove("Volvo")
+
+---------------------------------------------------------------
+Note:
+remove() deletes only the first occurrence of the value.
+
+Common Array (List) Methods
+Method	Description
+append()	Adds an element at the end
+clear()	Removes all elements
+copy()	Returns a copy of the list
+count()	Counts occurrences of a value
+extend()	Adds elements from another list
+index()	Returns index of first matching value
+insert()	Adds element at a specific position
+pop()	Removes element at given index
+remove()	Removes first matching value
+reverse()	Reverses list order
+sort()	Sorts the list
+Key Points to Remember
+
+Python uses lists as arrays
+
+Indexing starts from 0
+
+Arrays are mutable (can be changed)
+
+Suitable for storing and managing multiple values efficiently

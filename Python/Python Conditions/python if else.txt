@@ -1,0 +1,177 @@
+Python If..else
+
+1. Python if Statement
+Definition
+
+The if statement is used to execute a block of code only when a condition is True.
+
+Syntax
+if condition:
+    statement(s)
+
+Example
+age = 20
+
+if age >= 18:
+    print("Eligible to vote")
+
+Output
+Eligible to vote
+
+2. Python elif Statement
+Definition
+
+The elif statement is used to check multiple conditions when the previous if condition is False.
+
+Syntax
+if condition1:
+    statement(s)
+elif condition2:
+    statement(s)
+
+Example
+marks = 75
+
+if marks >= 90:
+    print("Grade A")
+elif marks >= 60:
+    print("Grade B")
+
+Output
+Grade B
+
+3. Python else Statement
+Definition
+
+The else statement executes when all the above conditions are False.
+
+Syntax
+if condition:
+    statement(s)
+else:
+    statement(s)
+
+Example
+number = 7
+
+if number % 2 == 0:
+    print("Even number")
+else:
+    print("Odd number")
+
+Output
+Odd number
+--------------------------------------------------
+4. Python if – elif – else
+Definition
+
+Used when there are more than two possible conditions to check.
+
+Syntax
+if condition1:
+    statement(s)
+elif condition2:
+    statement(s)
+else:
+    statement(s)
+
+Example
+marks = 40
+
+if marks >= 90:
+    print("Grade A")
+elif marks >= 60:
+    print("Grade B")
+else:
+    print("Grade C")
+
+Output
+Grade C
+------------------------------------------------------
+
+continue from here
+5. Shorthand If (Ternary Operator)
+Definition
+
+A one-line if-else statement used for simple conditions.
+
+Syntax
+value_if_true if condition else value_if_false
+
+Example
+a = 10
+b = 20
+
+print("a is greater") if a > b else print("b is greater")
+
+Output
+b is greater
+---------------------------------------------------------------
+
+6. Logical Operators
+Definition
+
+Logical operators are used to combine multiple conditions.
+
+Operators
+
+and – True if both conditions are True
+
+or – True if at least one condition is True
+
+not – Reverses the condition
+
+Syntax
+if condition1 and condition2:
+    statement(s)
+
+Example
+age = 25
+has_id = True
+
+if age >= 18 and has_id:
+    print("Entry allowed")
+
+Output
+Entry allowed
+------------------------------------------------------------------
+7. Nested if
+Definition
+
+A nested if is an if statement inside another if statement.
+
+Syntax
+if condition1:
+    if condition2:
+        statement(s)
+
+Example
+username = "admin"
+password = "1234"
+
+if username == "admin":
+    if password == "1234":
+        print("Login successful")
+
+Output
+Login successful
+
+8. pass Statement
+Definition
+
+The pass statement is used as a placeholder where a statement is required but no action is needed.
+
+Syntax
+if condition:
+    pass
+
+Example
+age = 16
+
+if age >= 18:
+    pass
+else:
+    print("Minor")
+
+Output
+Minor

@@ -1,0 +1,296 @@
+what is the difference between git and GitHub.
+
+
+Git → Version control tool installed locally to track code changes.
+
+GitHub → Cloud-based platform to host repositories, collaborate via PRs, issues, actions, etc.
+
+2. What is a repository?
+A place where project files + history are stored.
+
+Local repo → On your machine (.git folder)
+
+Remote repo → Hosted on GitHub/GitLab/Bitbucket
+---
+
+MCQ Questions
+
+What is the difference between Git and GitHub?
+A. GitHub is a command-line tool
+B. Git is a cloud hosting platform
+C. Git is a version control system, GitHub is a hosted platform
+D. Git is used for automation
+A:C
+
+What is a repository?
+A. A file for storing passwords
+B. A package manager
+C. A project directory with version history
+D. A GitHub Action
+A:C
+
+A commit contains:
+A. File size
+B. Download URL
+C. Message, author, hash, timestamp
+D. Install packages
+A:C
+
+What is the purpose of branches?
+A. Delete code
+B. Speed up GitHub
+C. Develop features independently
+D. Store secrets
+A:C
+
+What is a Pull Request?
+A. A login method
+B. Request to merge one branch into another
+C. A way to delete commits
+D. A GitHub deployment
+A:B
+
+Which is true about Fork and Clone?
+A. Fork downloads repository locally
+B. Fork copies on GitHub; clone copies to local
+C. Clone deletes branches
+D. Clone creates PR automatically
+A:B
+
+What is .gitignore used for?
+A. Stores passwords
+B. Tells Git which files to skip
+C. Creates branches
+D. Compiles code
+A:B
+
+git add vs git commit:
+A. Add stages; commit saves
+B. Add saves; commit deletes
+C. Both delete changes
+D. Commit stages files
+A:A
+
+git pull is:
+A. Show history
+B. fetch + merge
+C. Only downloads
+D. Deletes remote
+A:B
+
+git merge does:
+A. Deletes branches
+B. Combines changes from branches
+C. Creates conflicts automatically
+D. Removes commits
+A:B
+
+Gitflow main branches:
+A. master and feature
+B. main and develop
+C. release and hotfix
+D. feature and test
+A:B
+
+Merge conflicts are solved:
+A. Automatically
+B. Restart workflow
+C. Manual edits + commit
+D. Using .gitignore
+A:C
+
+Rebase is used for:
+A. Removing history
+B. Making history linear
+C. Creating tags
+D. Creating forks
+A:B
+
+Cherry-pick means:
+A. Delete a commit
+B. Apply one specific commit
+C. Merge branches
+D. Create a release
+A:B
+
+Draft PR means:
+A. Automatically merges
+B. Delete branch
+C. PR not ready for merge
+D. Used for tagging
+A:C
+
+Good code review:
+A. Personal criticism
+B. Approve everything
+C. Check logic, clarity, standards
+D. Ignore comments
+A:C
+
+GitHub Actions is used for:
+A. Storing files
+B. CI/CD automation
+C. Social networking
+D. Video editing
+A:B
+
+Workflow → Job → Step represents:
+A. Workflow → Jobs → Steps
+B. Step → Workflow → Job
+C. Job → Workflow → Step
+D. Step → Job → Workflow
+A:C
+
+uses: keyword is used to:
+A. Run shell script
+B. Reuse existing action
+C. Delete repo
+D. Start runner
+A:B
+
+Runner means:
+A. GitHub user
+B. Git history
+C. Machine executing workflow
+D. Merge utility
+A:C
+
+on: block defines:
+A. Deployment
+B. When workflow runs
+C. Creates actions
+D. Deletes artifacts
+A:C
+
+workflow_dispatch:
+A. Runs daily
+B. Manual trigger
+C. Runs on push
+D. Runs on failure
+A:B
+
+schedule trigger uses:
+A. Manual button
+B. Pull requests
+C. Cron expressions
+D. Tags
+A:C
+
+repository_dispatch:
+A. Merge trigger
+B. API trigger
+C. Tag trigger
+D. Fork trigger
+A:B
+
+GitHub Secrets store:
+A. Logs
+B. Issues
+C. Encrypted sensitive data
+D. Commits
+A:A
+
+Access secrets in workflow:
+A. Hard-code them
+B. ${{ secrets.NAME }}
+C. In commit message
+D. As folder name
+A:B
+
+Should credentials be hard-coded?
+A. Yes
+B. No, because of security and history
+C. Only on main
+D. Only in testing
+A:B
+
+Matrix strategy does:
+A. Deletes jobs
+B. Random jobs
+C. Runs combinations (e.g., versions)
+D. Ignores steps
+A:C
+
+Caching helps:
+A. Store commit history
+B. Save dependencies across runs
+C. Delete artifacts
+D. Create forks
+A:A
+
+Deploy artifacts using:
+A. .gitignore
+B. Upload/download artifacts or deploy step
+C. Commit them
+D. Fork repository
+A:B
+
+needs: keyword does:
+A. Create branches
+B. Print output
+C. Job dependency
+D. Push code
+A:C
+
+Handling build failures:
+A. Close laptop
+B. Check logs, reproduce, fix
+C. Delete repo
+D. Clear cache always
+A:B
+
+Auto tests before merge:
+A. Manual checklist
+B. Cron job
+C. Tests on PR + required checks
+D. After deployment
+A:C
+
+Deployment versioning:
+A. Random names
+B. IP address
+C. Semantic versions/tags
+D. Branch count
+A:C
+
+Large accidental commits:
+A. Push force
+B. Tag it
+C. Use filter-repo or BFG
+D. Create new repo
+A:C
+
+Delete local branch:
+A. git delete branch
+B. git branch -d feature
+C. git reset
+D. git remove
+A:B
+
+Debug workflow:
+A. Restart PC
+B. Add logs/echo/debug
+C. Delete YAML
+D. Switch to Windows
+A:B
+
+Print env variable:
+A. print var
+B. GitHub dashboard
+C. echo "${{ env.VAR }}"
+D. .gitignore
+A:C
+
+Workflow snippet runs:
+A. On PR
+B. Every minute
+C. On push to main
+D. Only manually
+A:C
+
+First step in sample workflow:
+A. Build app
+B. Checkout repository
+C. Upload release
+D. Create tag
+A:B

@@ -1,0 +1,251 @@
+Python Decorators
+Definition
+
+A decorator is a function that adds extra behavior to another function without modifying the original function’s code.
+
+A decorator:
+
+Takes a function as input
+
+Returns a new function with added functionality
+
+Basic Decorator
+Concept
+
+Define a decorator function
+
+Inside it, define a wrapper (inner) function
+
+Return the wrapper
+
+Apply the decorator using @decorator_name
+
+Syntax
+def decorator(func):
+    def wrapper():
+        # extra behavior
+        return func()
+    return wrapper
+
+Example
+def changecase(func):
+    def myinner():
+        return func().upper()
+    return myinner
+
+@changecase
+def myfunction():
+    return "Hello Sally"
+
+print(myfunction())
+
+Output
+HELLO SALLY
+
+Explanation
+
+changecase is the decorator
+
+myfunction is the decorated function
+
+@changecase replaces myfunction with myinner
+-------------------------------------------------------------------------------
+
+Multiple Decorator Calls
+Concept
+
+The same decorator can be applied to multiple functions
+
+Example
+def changecase(func):
+    def myinner():
+        return func().upper()
+    return myinner
+
+@changecase
+def myfunction():
+    return "Hello Sally"
+
+@changecase
+def otherfunction():
+    return "I am speed!"
+
+print(myfunction())
+print(otherfunction())
+
+Output
+HELLO SALLY
+I AM SPEED!
+-----------------------------------------------------------
+
+Decorators with Function Arguments
+Concept
+
+If the decorated function takes arguments, the wrapper must accept them
+
+Example
+def changecase(func):
+    def myinner(x):
+        return func(x).upper()
+    return myinner
+
+@changecase
+def myfunction(name):
+    return "Hello " + name
+
+print(myfunction("John"))
+
+Output
+HELLO JOHN
+-------------------------------------------------------------------
+Using *args and **kwargs
+Concept
+
+Used when the decorator does not know the number or type of arguments
+
+Makes decorators flexible and reusable
+
+Example
+def changecase(func):
+    def myinner(*args, **kwargs):
+        return func(*args, **kwargs).upper()
+    return myinner
+
+@changecase
+def myfunction(name):
+    return "Hello " + name
+
+print(myfunction("John"))
+
+Output
+HELLO JOHN
+
+Decorator with Arguments (Decorator Factory)
+Concept
+
+A decorator that itself takes arguments
+
+Requires three levels of functions
+
+Structure
+def decorator(arg):
+    def actual_decorator(func):
+        def wrapper():
+            return func()
+        return wrapper
+    return actual_decorator
+
+Example
+def changecase(n):
+    def changecase(func):
+        def myinner():
+            if n == 1:
+                return func().lower()
+            else:
+                return func().upper()
+        return myinner
+    return changecase
+
+@changecase(1)
+def myfunction():
+    return "Hello Linus"
+
+print(myfunction())
+
+Output
+hello linus
+----------------------------------------------------------------------------------------
+
+Multiple Decorators on a Single Function
+Concept
+
+Multiple decorators can be applied to one function
+
+Decorators are executed from bottom to top
+
+Example
+def changecase(func):
+    def myinner():
+        return func().upper()
+    return myinner
+
+def addgreeting(func):
+    def myinner():
+        return "Hello " + func() + " Have a good day!"
+    return myinner
+
+@changecase
+@addgreeting
+def myfunction():
+    return "Tobias"
+
+print(myfunction())
+
+Execution Order
+
+addgreeting runs first
+
+changecase runs second
+
+Output
+HELLO TOBIAS HAVE A GOOD DAY!
+--------------------------------------------------------------------------
+
+Function Metadata Problem
+Concept
+
+Decorated functions lose original metadata like:
+
+__name__
+
+__doc__
+
+Example (Without Decorator)
+def myfunction():
+    return "Have a great day!"
+
+print(myfunction.__name__)
+
+Output
+myfunction
+
+Example (With Decorator)
+def changecase(func):
+    def myinner():
+        return func().upper()
+    return myinner
+
+@changecase
+def myfunction():
+    return "Have a great day!"
+
+print(myfunction.__name__)
+
+Output
+myinner
+
+Preserving Function Metadata using functools.wraps
+Concept
+
+functools.wraps copies metadata from the original function to the wrapper
+
+Example
+import functools
+
+def changecase(func):
+    @functools.wraps(func)
+    def myinner():
+        return func().upper()
+    return myinner
+
+@changecase
+def myfunction():
+    return "Have a great day!"
+
+print(myfunction.__name__)
+
+Output
+myfunction
+
+------------------------------------------------------------------------------------------------------
+https://www.w3schools.com/python/exercise.asp?x=xrcise_scope1

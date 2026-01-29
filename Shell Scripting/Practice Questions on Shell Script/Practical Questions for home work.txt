@@ -1,0 +1,12 @@
+Home work 16/12/25
+Task 9:
+Create a menu using case:
+
+1) Show date
+2) Show current directory
+3) List files
+
+
+Task 10:
+Check whether a given year is a leap year
+ 

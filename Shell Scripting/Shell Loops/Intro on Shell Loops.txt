@@ -1,0 +1,40 @@
+Shell Loops – Introduction
+
+A shell loop is a programming structure that allows you to repeat a set of commands multiple times. Instead of writing the same commands again and again, a loop automatically executes them until a certain condition is met or until a list is fully processed. Shell loops make scripts more efficient, shorter, and easier to maintain.
+
+Shell provides four main types of loops:
+
+while loop – repeats as long as a condition remains true
+
+for loop – repeats for each item in a list or range
+
+until loop – repeats until a condition becomes true (opposite of while)
+
+select loop – used for creating simple menu-based options
+
+Loops can also be nested, meaning one loop inside another.
+
+Where Shell Loops Are Useful in Real Life
+
+Shell loops are used heavily in automation and system administration. Some common real-life applications are:
+
+Automating repetitive tasks
+Running the same command on multiple files, directories, or servers.
+
+Monitoring and waiting for conditions
+Keep checking if a service is running, a server is reachable, or a file exists.
+
+Processing large numbers of files
+Renaming files, compressing them, moving logs, or converting formats.
+
+Reading data line-by-line
+Parsing configuration files, logs, or input files.
+
+Performing health checks
+Checking disk space, network connectivity, CPU usage in repeated intervals.
+
+Menu-driven scripts
+Creating user-friendly scripts that show menus (using the select loop).
+
+Automation in DevOps and CI/CD
+Running deployments, backups, cleanup, monitoring scripts using loops.

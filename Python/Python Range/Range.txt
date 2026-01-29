@@ -1,0 +1,168 @@
+Python range() Function
+
+The built-in range() function returns an immutable sequence of numbers, commonly used for looping a fixed number of times.
+
+Data type: range
+
+Immutable: cannot be modified after creation
+
+Syntax:
+
+range(start, stop, step)
+
+
+start → starting value (inclusive, default = 0)
+
+stop → ending value (exclusive)
+
+step → difference between values (default = 1)
+---------------------------------------------------------------------------
+
+1. range() with One Argument
+
+When only one argument is given, it is treated as the stop value.
+
+x = range(10)
+print(list(x))
+
+
+Output
+
+[0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+
+
+Explanation:
+
+Starts from 0
+
+Ends at 9 (10 is excluded)
+------------------------------------------------------------------
+
+2. range() with Two Arguments
+
+First argument is start, second is stop.
+
+x = range(3, 10)
+print(list(x))
+
+
+Output
+
+[3, 4, 5, 6, 7, 8, 9]
+----------------------------------------------------------------------
+
+3. range() with Three Arguments
+
+Third argument is the step value.
+
+x = range(3, 10, 2)
+print(list(x))
+
+
+Output
+
+[3, 5, 7, 9]
+
+
+Explanation:
+
+Starts at 3
+
+Increases by 2
+
+Stops before 10
+------------------------------------------------------------------------------
+
+4. Using range() in a for Loop
+for i in range(5):
+    print(i)
+
+
+Output
+
+0
+1
+2
+3
+4
+-----------------------------------------------------------------------------------------
+5. Displaying a Range Using list()
+
+The range object itself does not display values directly.
+
+print(list(range(5)))
+print(list(range(1, 6)))
+print(list(range(5, 20, 3)))
+
+
+Output
+
+[0, 1, 2, 3, 4]
+[1, 2, 3, 4, 5]
+[5, 8, 11, 14, 17]
+----------------------------------------------------------------------------------------------
+
+6. Slicing a Range
+
+Ranges support indexing and slicing.
+
+r = range(10)
+
+print(r[2])
+print(list(r[:3]))
+
+
+Output
+
+2
+[0, 1, 2]
+
+
+Note:
+
+r[2] returns a single value
+
+r[:3] returns a new range (converted to list for display)
+----------------------------------------------------------------------------------------
+
+7. Membership Testing (in Operator)
+r = range(0, 10, 2)
+
+print(6 in r)
+print(7 in r)
+
+
+Output
+
+True
+False
+
+Explanation:
+
+6 is present in the range
+
+7 is not present
+---------------------------------------------------------------------------------------------
+8. Length of a Range
+
+Use len() to find how many elements are in a range.
+
+r = range(0, 10, 2)
+print(len(r))
+
+
+Output
+
+5
+
+Elements are: 0, 2, 4, 6, 8
+
+Key Points Summary
+
+range() is memory-efficient
+
+Values are generated only when needed
+
+Commonly used in loops
+
+Supports indexing, slicing, len(), and in

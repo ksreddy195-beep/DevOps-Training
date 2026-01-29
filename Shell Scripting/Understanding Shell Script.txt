@@ -1,0 +1,37 @@
+Structure, Syntax, Usage
+
+Shells are interactive, meaning they take user input and execute commands. But typing multiple commands repeatedly is inefficient.
+
+Instead, you can store commands in a file a shell script and run them when needed. These scripts are similar to Windows batch files and typically have a .sh extension.
+
+If you are familiar with languages like Python or C, you will find shell scripting easy to grasp. A shell script includes:
+
+Shell Keywords: if, else, break, etc.
+Shell Commands: cd, ls, echo, pwd, touch, etc.
+Functions
+Control Flow: if..then..else, case, loops, etc.
+---
+
+Sample Shell script:
+
+Create a file
+  touch firstshell.sh
+
+2. to open file
+  vi firstshell.sh
+
+3. add automation logic
+  #!/bin/bash     (this is called shebang)
+echo "Hello DevOps!"
+
+4. Save and exit
+    :wq
+
+5. Make it executable
+    Chmod U+x firstshell.sh
+
+6. How to run
+    ./firstshell.sh
+
+
+---

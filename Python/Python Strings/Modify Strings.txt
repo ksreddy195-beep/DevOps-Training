@@ -1,0 +1,86 @@
+Python String Built-in Methods
+
+Strings in Python come with many built-in methods that help you manipulate and work with text easily.
+
+1. upper()
+Purpose
+
+Converts all characters in a string to uppercase.
+
+Syntax
+string.upper()
+
+Example
+a = "Hello, World!"
+print(a.upper())
+
+Output
+HELLO, WORLD!
+
+2. lower()
+Purpose
+
+Converts all characters in a string to lowercase.
+
+Syntax
+string.lower()
+
+Example
+a = "Hello, World!"
+print(a.lower())
+
+Output
+hello, world!
+
+3. strip()
+Purpose
+
+Removes leading and trailing whitespace (spaces, tabs, new lines).
+
+Syntax
+string.strip()
+
+Example
+a = " Hello, World! "
+print(a.strip())
+
+Output
+Hello, World!
+
+4. replace()
+Purpose
+
+Replaces one substring with another substring.
+
+Syntax
+string.replace(old, new)
+
+Example
+a = "Hello, World!"
+print(a.replace("H", "J"))
+
+Output
+Jello, World!
+
+5. split()
+Purpose
+
+Splits a string into a list based on a specified separator.
+
+Syntax
+string.split(separator)
+
+Example
+a = "Hello, World!"
+print(a.split(","))
+
+Output
+['Hello', ' World!']
+
+Key Points to Remember
+
+String methods do not modify the original string
+
+They always return a new string or list
+
+Strings in Python are immutable

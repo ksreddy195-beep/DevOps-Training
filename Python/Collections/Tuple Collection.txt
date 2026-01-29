@@ -1,0 +1,199 @@
+Tuple
+Tuples are used to store multiple items in a single variable.
+
+Tuple is one of 4 built-in data types in Python used to store collections of data, the other 3 are List, Set, and Dictionary, all with different qualities and usage.
+
+A tuple is a collection which is ordered and unchangeable.
+
+Tuples are written with round brackets.
+
+Syntax:
+
+mytuple = ("apple", "banana", "cherry")
+
+Example:
+Create a Tuple:
+
+thistuple = ("apple", "banana", "cherry")
+print(thistuple)
+
+Output :
+
+('apple', 'banana', 'cherry')
+
+------------------------------------------------------
+Tuple Items
+Tuple items are ordered, unchangeable, and allow duplicate values.
+
+Tuple items are indexed, the first item has index [0], the second item has index [1] etc.
+
+Ordered
+When we say that tuples are ordered, it means that the items have a defined order, and that order will not change.
+
+Unchangeable
+Tuples are unchangeable, meaning that we cannot change, add or remove items after the tuple has been created.
+
+Allow Duplicates
+Since tuples are indexed, they can have items with the same value:
+
+Example
+Tuples allow duplicate values:
+
+thistuple = ("apple", "banana", "cherry", "apple", "cherry")
+print(thistuple)
+
+Output :
+
+('apple', 'banana', 'cherry', 'apple', 'cherry')
+
+Tuple Length
+To determine how many items a tuple has, use the len() function:
+
+Example
+Print the number of items in the tuple:
+
+thistuple = ("apple", "banana", "cherry")
+print(len(thistuple))
+
+output :
+3
+Create Tuple With One Item
+To create a tuple with only one item, you have to add a comma after the item, otherwise Python will not recognize it as a tuple.
+
+Example
+One item tuple, remember the comma:
+
+thistuple = ("apple",)
+print(type(thistuple))
+
+#NOT a tuple
+thistuple = ("apple")
+print(type(thistuple))
+
+Output:
+
+<class 'tuple'>
+<class 'str'>
+
+Tuple Items - Data Types
+Tuple items can be of any data type:
+
+Example
+String, int and boolean data types:
+
+tuple1 = ("apple", "banana", "cherry")
+tuple2 = (1, 5, 7, 9, 3)
+tuple3 = (True, False, False)
+
+Output :
+
+--------------------------------------------------------------------------
+Accessing Tuples in Python
+
+A tuple is an ordered collection of items. Since tuples are ordered, each element has a fixed position (index), which allows us to access elements easily.
+
+1. Indexing Tuples
+
+Tuple elements are accessed using index numbers.
+
+Indexing starts from 0
+
+Syntax:
+tuple_name[index]
+
+Example:
+
+colors = ("red", "green", "blue")
+print(colors[0])   # red
+print(colors[1])   # green
+print(colors[2])   # blue
+
+2. Negative Indexing
+
+Python allows negative indexing to access elements from the end.
+
+-1 refers to the last element
+
+-2 refers to the second last element
+
+Example:
+
+colors = ("red", "green", "blue")
+print(colors[-1])  # blue
+print(colors[-2])  # green
+
+3. Accessing a Range of Elements (Slicing)
+
+You can access multiple elements using slicing.
+
+Syntax:
+tuple_name[start : end]
+
+start is inclusive
+
+end is exclusive
+
+Example:
+
+numbers = (10, 20, 30, 40, 50)
+print(numbers[1:4])   # (20, 30, 40)
+
+4. Slicing with Missing Indexes
+
+If you skip start or end, Python assumes defaults.
+
+Missing start → begins from index 0
+
+Missing end → goes till last element
+
+Example:
+
+numbers = (10, 20, 30, 40, 50)
+
+print(numbers[:3])   # (10, 20, 30)
+print(numbers[2:])   # (30, 40, 50)
+
+5. Slicing with Step Value
+
+You can control how many elements to skip using a step.
+
+Syntax:
+tuple_name[start : end : step]
+
+Example:
+
+numbers = (10, 20, 30, 40, 50)
+print(numbers[0:5:2])   # (10, 30, 50)
+
+6. Accessing Nested Tuples
+
+Tuples can contain other tuples. Access elements step by step.
+
+Example:
+
+data = (1, 2, (3, 4, 5))
+print(data[2])      # (3, 4, 5)
+print(data[2][1])   # 4
+
+7. Using for Loop to Access Tuple Elements
+
+Tuples can be accessed one element at a time using a loop.
+
+Example:
+
+fruits = ("apple", "banana", "cherry")
+
+for fruit in fruits:
+    print(fruit)
+
+8. Accessing Tuple Using Index in Loop
+
+Use range() and len() to access elements with index values.
+
+Example:
+
+fruits = ("apple", "banana", "cherry")
+
+for i in range(len(fruits)):
+    print(i, fruits[i])
+------------------------------------------------------------------------------

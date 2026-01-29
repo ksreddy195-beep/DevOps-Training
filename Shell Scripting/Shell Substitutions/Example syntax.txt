@@ -1,0 +1,50 @@
+#!/bin/bash
+
+echo "Enter option:"
+echo "backslash | alert | backspace | suppress | formfeed | newline | carriage | tab | vertical | enable | disable | nonewline"
+read choice
+
+case $choice in
+    backslash)
+        echo -e "Backslash example: \\"
+        ;;
+    alert)
+        echo -e "Alert sound\a"
+        ;;
+    backspace)
+        echo -e "Hello\b\bHi"
+        ;;
+    suppress)
+        echo -e "No new line here\c"
+        echo " <-- continues"
+        ;;
+    formfeed)
+        echo -e "Line1\fLine2"
+        ;;
+    newline)
+        echo -e "Line1\nLine2"
+        ;;
+    carriage)
+        echo -e "Hello World\rHi"
+        ;;
+    tab)
+        echo -e "Name\tAge\tCity"
+        ;;
+    vertical)
+        echo -e "Line1\vLine2"
+        ;;
+    enable)
+        echo -e "Escape enabled\nSecond line"
+        ;;
+    disable)
+        echo -E "Escape disabled\nSecond line"
+        ;;
+    nonewline)
+        echo -n "Processing..."
+        sleep 1
+        echo "Done"
+        ;;
+    *)
+        echo "Invalid option"
+        ;;
+esac

@@ -1,0 +1,159 @@
+1. Application Access & Communication
+
+To make applications reachable by users
+
+Uses:
+
+IP addresses
+
+Ports
+
+HTTP / HTTPS
+
+DNS
+
+Example:
+User accesses a web app via a browser using a domain name.
+--------------------------------------------------------------------
+2. Server-to-Server Communication
+
+Communication between backend services
+
+Used in microservices architecture
+
+Examples:
+
+Application server → Database server
+
+Backend service → Auth service
+------------------------------------------------------------
+
+3. CI/CD Pipelines
+
+Code movement and automation depend on networking
+
+Uses secure protocols
+
+Examples:
+
+Git → Jenkins (webhooks)
+
+Jenkins → Kubernetes cluster
+
+Pipeline → Docker registry
+
+---------------------------------------------------------
+4. Cloud Infrastructure
+
+Networking connects cloud resources
+
+Used for:
+
+VPC / VNet creation
+
+Subnets using CIDR
+
+Internet access via gateways
+
+Private connectivity
+---------------------------------------------------------------
+5. Kubernetes & Containers
+
+Enables container communication
+
+Exposes containerized applications
+
+Used in:
+
+Pod-to-pod communication
+
+Services & Ingress
+
+Load balancer integration
+----------------------------------------------
+6. Load Balancing & Traffic Routing
+
+Distributes traffic efficiently
+
+Improves availability
+
+Examples:
+
+Nginx / HAProxy
+
+Cloud Load Balancers
+
+Ingress Controllers
+------------------------------------------------
+7. Security & Access Control
+
+Protects applications and infrastructure
+
+Used for:
+
+Firewall rules
+
+Security groups
+
+Network policies
+
+Zero Trust networking
+
+-------------------------------------------------------------------------------------------------
+
+8. Monitoring & Logging
+
+Monitoring tools collect data over networks
+
+Examples:
+
+Prometheus scraping metrics
+
+Log shipping to ELK stack
+-----------------------------------------------------------------------------------------
+9. Disaster Recovery & Backup
+
+Data replication across regions
+
+Failover routing
+
+Examples:
+
+Primary → DR site sync
+
+DNS failover
+--------------------------------------------------------------------------------
+10. Troubleshooting & Incident Management
+
+Diagnose connectivity issues
+
+Common tools:
+
+ping
+curl
+traceroute
+netstat
+nslookup
+--------------------------------------------------------------------------------
+11. Infrastructure as Code (IaC)
+
+Networking configured using code
+
+Examples:
+
+Define subnets
+
+Create routing rules
+
+Configure firewall access
+--------------------------------------------------------------------------------------
+12. Real-World DevOps Example
+User → DNS → Load Balancer → App Pod → DB
+
+
+Networking connects every step.
+
+
+
+
+
