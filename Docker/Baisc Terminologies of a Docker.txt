@@ -1,0 +1,247 @@
+Container:
+
+1.What is container?
+
+A container is a lightweight, standalone package that includes:
+
+Application code
+Runtime (Python, Node, Java, etc.)
+Libraries & dependencies
+System tools
+
+It runs consistently across environments (local, server, cloud).
+
+Simple definition:
+A container = “app + everything it needs to run”
+
+2. Why Containers?
+
+Problem before containers:
+
+Works on my machine but not on server
+Dependency conflicts
+Difficult deployments
+
+Solution:
+
+Same container runs everywhere
+No dependency issues
+Easy to deploy and scale
+
+3. Container vs Virtual Machine
+
+Container:
+
+Shares host OS kernel
+Lightweight (MBs)
+Fast startup (seconds)
+Runs multiple containers on same OS
+
+Virtual Machine:
+
+Has full OS
+Heavy (GBs)
+Slow startup (minutes)
+
+Example:
+
+VM: Ubuntu OS inside another OS
+Container: Python app running using host OS
+
+4. How Containers Work (Simple)
+
+Uses:
+
+OS kernel features (namespaces, cgroups)
+Isolation (process-level)
+
+Each container:
+
+Has its own filesystem
+Has its own network
+Has its own processes
+
+But shares:
+
+Same OS kernel
+
+5. Container Lifecycle
+
+Steps:
+
+Build image
+Run container
+Stop container
+Remove container
+
+Example:
+
+docker build -t myapp .
+docker run myapp
+docker stop <container_id>
+docker rm <container_id>
+
+6. What is a Container Image?
+
+Image:
+
+Blueprint/template of container
+Read-only
+
+Container:
+
+Running instance of image
+
+Example:
+
+Image = class
+Container = object
+
+7. Docker (Most Popular Tool)
+
+Docker is used to:
+
+Build images
+Run containers
+Manage containers
+
+8. Basic Docker Commands
+
+Run container:
+
+docker run nginx
+
+Run in background:
+
+docker run -d nginx
+
+
+List containers:
+
+docker ps
+
+Stop container:
+
+docker stop <id>
+
+Remove container:
+
+docker rm <id>
+
+Remove image:
+
+docker rmi <image>
+
+
+9. Example (Real Use Case)
+
+Example 1: Python App
+
+Without container:
+
+Install Python
+Install dependencies manually
+
+With container:
+
+FROM python:3.10
+WORKDIR /app
+COPY . .
+RUN pip install -r requirements.txt
+CMD ["python", "app.py"]
+
+Run:
+
+docker build -t python-app .
+docker run python-app
+
+Example 2: Nginx Server
+
+docker run -d -p 80:80 nginx
+
+Now open browser:
+
+http://localhost
+
+
+10. Advantages of Containers
+Portability (runs anywhere)
+Lightweight
+Faster deployment
+Easy scaling
+Isolation between apps
+Works well with CI/CD
+
+
+11. Limitations
+Shares OS kernel (less isolation than VM)
+Not ideal for all workloads
+Needs container runtime (Docker, etc.)
+
+12. Container vs Image vs Dockerfile
+
+Dockerfile:
+
+Instructions to build image
+
+Image:
+
+Built from Dockerfile
+
+Container:
+
+Running instance of image
+
+Flow:
+Dockerfile → Image → Container
+
+
+13. Multiple Containers
+
+Yes, you can run multiple containers:
+
+Each container = separate app/service
+
+Example:
+
+1 container → frontend
+1 container → backend
+1 container → database
+14. Docker Compose (Multiple Containers)
+
+Used to run multiple services together
+
+Command:
+
+docker-compose up
+
+Stop:
+
+docker-compose down
+
+Example:
+
+Web app + DB in one command
+
+
+15. Real DevOps Usage
+Microservices architecture
+CI/CD pipelines
+Kubernetes deployments
+Cloud-native apps
+
+
+16. Simple Analogy
+
+Container = Lunch box
+
+Contains everything needed (food, spoon, etc.)
+You can carry it anywhere
+Works same everywhere
+
+17. Summary
+Container = lightweight isolated environment
+Image = template
+Docker = tool
+Faster and portable than VMs
+Used everywhere in DevOps

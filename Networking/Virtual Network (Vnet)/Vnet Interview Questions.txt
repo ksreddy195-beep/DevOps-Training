@@ -1,0 +1,281 @@
+Vnet Interview Questions:
+
+Which OSI layer is responsible for routing packets?
+A. Data Link
+B. Network
+C. Transport
+D. Session
+Answer: _B_
+
+What does CIDR stand for?
+A. Classless Internet Domain Routing
+B. Classless Inter-Domain Routing
+C. Common Internet Data Routing
+D. Centralized IP Domain Routing
+Answer: _B_
+
+Which protocol is used to assign IP addresses dynamically?
+A. DNS
+B. DHCP
+C. ARP
+D. FTP
+Answer: _B_
+
+What is the default port for HTTP?
+A. 21
+B. 22
+C. 80
+D. 443
+Answer: _C_
+
+Which protocol provides secure communication over a network?
+A. HTTP
+B. FTP
+C. HTTPS
+D. Telnet
+Answer: _C_
+
+What is the primary purpose of a firewall?
+A. Load balancing
+B. Network monitoring
+C. Traffic filtering
+D. IP assignment
+Answer: _C_
+
+At which OSI layer does a traditional firewall operate?
+A. Layer 1
+B. Layer 2
+C. Layer 3
+D. Layer 7
+Answer: C__
+
+What is a subnet?
+A. A physical network device
+B. A logical division of an IP network
+C. A routing protocol
+D. A DNS record
+Answer: _B_
+
+Which IP address range is private?
+A. 8.8.8.8
+B. 172.16.0.0 – 172.31.255.255
+C. 1.1.1.1
+D. 54.85.23.1
+Answer: _B_
+
+What does NAT (network address translation) do?
+A. Encrypts traffic
+B. Translates IP addresses
+C. Assigns MAC addresses
+D. Blocks packets
+Answer: _B_
+
+Which protocol resolves IP address to MAC address?
+A. DNS
+B. DHCP
+C. ARP
+D. ICMP
+Answer: _C_
+
+What is the default port for SSH?
+A. 20
+B. 21
+C. 22
+D. 23
+Answer: _C_
+
+What is a Virtual Private Cloud (VPC)?
+A. Public network shared by all users
+B. Logical isolated network in the cloud
+C. Physical data center
+D. VPN software
+Answer: _B_
+
+Which component controls inbound and outbound traffic in cloud networks?
+A. Load Balancer
+B. DNS
+C. Security Group / NSG
+D. Storage Account
+Answer: _C_
+
+What is the purpose of a load balancer?
+A. Encrypt data
+B. Monitor logs
+C. Distribute traffic
+D. Assign IP addresses
+Answer: C__
+
+Which protocol is used to test network connectivity?
+A. FTP
+B. ICMP (Internet control messaging protocol)
+C. SMTP
+D. SNMP
+Answer: _B_
+
+What does DNS do?
+A. Assigns IP addresses
+B. Encrypts network traffic
+C. Resolves domain names
+D. Filters traffic
+Answer: _C_
+
+Which network model is used by Kubernetes?
+A. Single-host model
+B. Flat network model
+C. Client-server only
+D. Token-ring model
+Answer: _B_
+
+What is a service mesh mainly used for?
+A. Storage management
+B. Networking between microservices
+C. VM provisioning
+D. CI/CD pipelines
+Answer: _B_
+
+Which port is commonly used by HTTPS?
+A. 80
+B. 21
+C. 22
+D. 443
+Answer: _D_
+
+What is ingress traffic?
+A. Outgoing traffic from a network
+B. Incoming traffic to a network
+C. Encrypted traffic
+D. Internal traffic only
+Answer: _B_
+
+What is egress traffic?
+A. Incoming traffic
+B. Outgoing traffic
+C. Local traffic
+D. Blocked traffic
+Answer: _B_
+
+Which DevOps tool is commonly used for service discovery?
+A. Jenkins
+B. Consul
+C. Git
+D. Ansible
+Answer: _B_
+
+What is port forwarding?
+A. Blocking a port
+B. Mapping one port to another
+C. Encrypting ports
+D. Closing unused ports
+Answer: _B_
+
+What is the main purpose of a reverse proxy?
+A. Store files
+B. Forward client requests to backend servers
+C. Assign IP addresses
+D. Monitor CPU usage
+Answer: _B_
+
+Which protocol is connection-oriented?
+A. UDP
+B. ICMP
+C. TCP
+D. ARP
+Answer: _C_
+
+What does a /24 CIDR block represent?
+A. 16 IP addresses
+B. 32 IP addresses
+C. 256 IP addresses
+D. 512 IP addresses
+Answer: C__
+
+What is zero trust networking?
+A. Trust all internal traffic
+B. No security inside network
+C. Verify every request
+D. Use only VPN
+Answer: _C_
+
+Which cloud component provides private access to services without public IP?
+A. Internet Gateway
+B. NAT Gateway
+C. Private Endpoint
+D. CDN
+Answer: _C_
+
+What is the purpose of a route table?
+A. Manage DNS entries
+B. Define packet routing rules
+C. Control user access
+D. Monitor traffic
+Answer: _B_
+
+What is Kubernetes Ingress?
+A. A storage controller
+B. A networking API for HTTP routing
+C. A node agent
+D. A monitoring service
+Answer: _B_
+
+Which protocol is commonly used for container networking?
+A. BGP
+B. VXLAN (virtual extensible lan)
+C. FTP
+D. SNMP
+Answer: _B_
+
+What is MTU?
+A. Maximum Transfer Unit
+B. Minimum Transport Unit
+C. Managed Traffic Unit
+D. Medium Transfer Utility
+Answer: A__
+
+Which command is used to test DNS resolution?
+A. ping
+B. traceroute
+C. nslookup
+D. netstat
+Answer: _C_
+
+What does traceroute help identify?
+A. DNS records
+B. Packet encryption
+C. Network path hops
+D. IP ownership
+Answer: _C_
+
+What is a bastion host?
+A. Load balancer
+B. Secure jump server
+C. DNS server
+D. Storage gateway
+Answer: _B_
+
+Which port is used by Kubernetes API server?
+A. 6443
+B. 8080
+C. 2379
+D. 10250
+Answer: _A_
+
+What is a flat network?
+A. Network with multiple VLANs
+B. Network with no segmentation
+C. Network with firewalls
+D. Network with NAT
+Answer: _B_
+
+Which protocol is used for log collection and monitoring?
+A. FTP
+B. SNMP (simple network management protocol)
+C. SSH
+D. SCP
+Answer: _B_
+
+What is the main purpose of network segmentation?
+A. Increase bandwidth
+B. Improve security and isolation
+C. Reduce IP addresses
+D. Increase latency
+Answer: B

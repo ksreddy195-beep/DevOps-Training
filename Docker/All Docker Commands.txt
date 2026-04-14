@@ -1,0 +1,198 @@
+1. Docker Basics
+Check Docker version
+docker --version
+
+Shows installed Docker version.
+
+docker info
+
+Detailed system-wide Docker information (containers, images, storage, etc.).
+
+2. Working with Images
+List images
+docker images
+
+Shows all images stored locally.
+
+Pull image from registry
+docker pull nginx
+
+Downloads image from Docker Hub.
+
+Specific version:
+
+docker pull nginx:1.25
+Remove image
+docker rmi nginx
+
+Force remove:
+
+docker rmi -f nginx
+
+Build image from Dockerfile
+docker build -t myapp:v1 .
+
+-t → tag name
+. → current directory (Dockerfile location)
+
+3. Working with Containers
+Run container
+docker run nginx
+
+Run in detached mode:
+
+docker run -d nginx
+
+
+Run with port mapping:
+
+docker run -d -p 5000:80 nginx
+
+
+Run with name:
+
+docker run -d --name mycontainer nginx
+
+Run with environment variable:
+
+docker run -d -e ENV=prod nginx
+
+
+List containers
+docker ps
+Running containers only
+
+docker ps -a
+All containers (including stopped)
+
+Stop container
+docker stop <container_id>
+Start container
+docker start <container_id>
+Restart container
+docker restart <container_id>
+Remove container
+docker rm <container_id>
+
+Force remove:
+
+docker rm -f <container_id>
+
+4. Inspecting Containers
+View logs
+docker logs <container_id>
+
+Follow logs:
+docker logs -f <container_id>
+
+
+Execute command inside container
+docker exec -it <container_id> /bin/bash
+
+For Alpine:
+docker exec -it <container_id> sh
+Inspect details
+docker inspect <container_id>
+
+Gives JSON output with full details.
+
+View resource usage
+docker stats
+
+
+5. Docker Volumes (Persistent Storage)
+Create volume
+docker volume create myvolume
+List volumes
+docker volume ls
+Use volume
+docker run -d -v myvolume:/data nginx
+Remove volume
+docker volume rm myvolume
+
+
+6. Docker Networks
+List networks
+docker network ls
+Create network
+docker network create mynetwork
+Run container in network
+docker run -d --network mynetwork nginx
+Inspect network
+docker network inspect mynetwork
+
+
+7. Docker Compose (Very Important for DevOps)
+Run services
+docker-compose up
+
+Detached mode:
+
+docker-compose up -d
+Stop services
+docker-compose down
+Rebuild services
+docker-compose up --build
+View logs
+docker-compose logs
+Scale services
+docker-compose up --scale app=3
+
+8. Docker Cleanup Commands
+Remove stopped containers
+docker container prune
+Remove unused images
+docker image prune
+Remove everything unused
+docker system prune
+
+9. Tagging and Pushing Images
+Tag image
+docker tag myapp:v1 username/myapp:v1
+Login to Docker Hub
+docker login
+Push image
+docker push username/myapp:v1
+
+10. Copy Files
+Copy from host to container
+docker cp file.txt <container_id>:/app
+Copy from container to host
+docker cp <container_id>:/app/file.txt .
+
+11. Save and Load Images
+Save image
+docker save -o myimage.tar myapp:v1
+Load image
+docker load -i myimage.tar
+
+12. Advanced Useful Commands
+Check container processes
+docker top <container_id>
+Attach to running container
+docker attach <container_id>
+Pause container
+docker pause <container_id>
+
+Unpause:
+
+docker unpause <container_id>
+
+
+13. Real Day-to-Day Workflow Example
+
+Typical flow in real projects:
+
+Build image
+docker build -t myapp:v1 .
+Run container
+docker run -d -p 5000:5000 myapp:v1
+Check logs
+docker logs -f <container_id>
+Debug inside container
+docker exec -it <container_id> bash
+Push to registry
+docker tag myapp:v1 username/myapp:v1
+docker push username/myapp:v1
+Deploy using compose
+docker-compose up -d

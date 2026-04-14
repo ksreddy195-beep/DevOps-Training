@@ -1,0 +1,190 @@
+Docker Registry 
+1. Definition
+
+A Docker Registry is a system used to store, manage, and distribute Docker images.
+
+It allows:
+
+Uploading images (push)
+Downloading images (pull)
+Versioning images using tags
+
+Simple understanding:
+Docker Registry is a central place where Docker images are stored and shared.
+
+2. Why Docker Registry is Needed
+
+Problem without registry:
+
+Images exist only on local machine
+Cannot share easily with team
+Not usable in CI/CD or production
+
+Solution:
+
+Store images in a registry
+Access from anywhere
+Enable automated deployments
+
+
+3. Core Concepts
+
+Image
+A packaged application with code, runtime, and dependencies
+
+Repository
+A collection of images with different versions
+
+Example:
+myapp:v1
+myapp:v2
+
+Tag
+Version identifier for an image
+
+Example:
+myapp:latest
+myapp:v1
+
+Registry
+Storage system for images
+
+4. Types of Registries
+
+Public Registry
+Accessible by anyone
+Example: Docker Hub
+
+Private Registry
+Requires authentication
+Used in organizations
+
+Self-hosted Registry
+You run your own registry using Docker
+
+5. Basic Workflow
+Build image
+Tag image
+Push to registry
+Pull from registry
+Run container
+
+
+6. End-to-End Use Case (From Scratch)
+Scenario
+
+You built a simple Python application and want to:
+
+Share it with your team
+Run it on another system
+Use it in deployment
+-------------------------------------------------------
+Step 1: Create Sample Application
+
+Create a file: app.py
+
+from flask import Flask
+
+app = Flask(__name__)
+
+@app.route("/")
+def home():
+    return "Hello from Docker Registry Demo"
+
+if __name__ == "__main__":
+    app.run(host="0.0.0.0", port=5000)
+
+Step 2: Create requirements.txt
+flask
+
+Step 3: Create Dockerfile
+FROM python:3.9
+
+WORKDIR /app
+
+COPY requirements.txt .
+RUN pip install -r requirements.txt
+
+COPY app.py .
+
+CMD ["python", "app.py"]
+
+
+Step 4: Build Docker Image
+docker build -t myapp:v1 .
+
+
+Step 5: Run Locally (Testing)
+docker run -d -p 5000:5000 myapp:v1
+
+Open browser:
+http://localhost:5000
+
+Output:
+Hello from Docker Registry Demo
+
+Step 6: Tag Image for Registry
+
+Assume your Docker Hub username is: ksreddy195
+
+docker tag myapp:v1 ksreddy195/myapp:v1
+
+Step 7: Login to Registry
+docker login
+
+Step 8: Push Image to Registry
+docker push ksreddy195/myapp:v1
+
+Now image is stored in registry
+
+Step 9: Pull Image on Another System
+docker pull ksreddy195/myapp:v1
+33
+Step 10: Run on Another System
+docker run -d -p 5000:5000 ksreddy195/myapp:v1
+
+Application works without code setup
+
+7. Using Private Registry (Local)
+Step 1: Run Registry
+docker run -d -p 5000:5000 registry:2
+Step 2: Tag Image
+docker tag myapp:v1 localhost:5000/myapp:v1
+Step 3: Push to Local Registry
+docker push localhost:5000/myapp:v1
+Step 4: Pull from Local Registry
+docker pull localhost:5000/myapp:v1
+
+8. Real DevOps Use Case
+Developer writes code
+Builds Docker image
+Pushes to registry
+CI/CD pipeline pulls image
+Deploys to Kubernetes
+
+Example:
+
+Jenkins builds image
+Push to registry
+Kubernetes pulls image and runs containers
+
+9. Advantages
+Central storage for images
+Easy sharing across systems
+Version control with tags
+Supports CI/CD automation
+Faster deployments
+
+10. Common Commands
+docker build -t myapp:v1 .
+docker tag myapp:v1 username/myapp:v1
+docker push username/myapp:v1
+docker pull username/myapp:v1
+docker run -d -p 5000:5000 username/myapp:v1
+
+11. Key Interview Points
+Docker Registry stores images, not containers
+Docker Hub is default registry
+Tag represents version
+Push uploads image, pull downloads image
+Used in CI/CD and deployments

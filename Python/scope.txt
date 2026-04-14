@@ -1,0 +1,224 @@
+1. Scope in Python
+
+Definition
+A variable is only accessible within the region where it is created. This region is called the scope of the variable.
+
+2. Local Scope
+
+Definition
+A variable created inside a function belongs to the local scope of that function and can be used only within that function.
+
+Example
+def myfunc():
+    x = 300
+    print(x)
+
+myfunc()
+
+
+Output
+
+300
+
+
+Explanation
+
+x is created inside myfunc()
+
+It cannot be accessed outside the function
+---
+
+3. Function Inside a Function (Nested Functions)
+
+A local variable is accessible to functions defined inside the same function.
+
+Example
+def myfunc():
+    x = 300
+    def myinnerfunc():
+        print(x)
+    myinnerfunc()
+
+myfunc()
+
+
+Output
+
+300
+
+
+Explanation
+
+x belongs to the outer function
+
+The inner function can access it
+
+4. Global Scope
+
+Definition
+A variable created outside all functions is a global variable.
+
+Global variables are accessible everywhere (inside and outside functions).
+
+Example
+x = 300
+
+def myfunc():
+    print(x)
+
+myfunc()
+print(x)
+
+
+Output
+
+300
+300
+
+
+Explanation
+
+x is defined globally
+
+Both the function and main program can access it
+
+
+5. Naming Variables (Local vs Global)
+
+If a variable has the same name inside and outside a function, Python treats them as separate variables.
+
+Example
+x = 300
+
+def myfunc():
+    x = 200
+    print(x)
+
+myfunc()
+print(x)
+
+
+Output
+
+200
+300
+
+
+Explanation
+
+x = 200 is local to the function
+
+x = 300 remains unchanged globally
+
+
+6. Global Keyword
+Creating a Global Variable Inside a Function
+
+Use the global keyword to make a variable global.
+
+def myfunc():
+    global x
+    x = 300
+
+myfunc()
+print(x)
+
+
+Output
+
+300
+---
+
+Modifying a Global Variable Inside a Function
+x = 300
+
+def myfunc():
+    global x
+    x = 200
+
+myfunc()
+print(x)
+
+
+Output
+
+200
+
+
+Explanation
+
+Without global, Python creates a new local variable
+
+global allows modification of the global variable
+---
+
+7. Nonlocal Keyword
+
+Definition
+The nonlocal keyword is used in nested functions to modify a variable from the enclosing (outer) function, not global.
+
+Example
+def myfunc1():
+    x = "Jane"
+    def myfunc2():
+        nonlocal x
+        x = "hello"
+    myfunc2()
+    return x
+
+print(myfunc1())
+
+
+Output
+
+hello
+
+
+Explanation
+
+x belongs to myfunc1
+
+nonlocal allows the inner function to modify it
+---
+
+8. LEGB Rule
+
+Python searches for variables in the following order:
+
+Local – inside the current function
+
+Enclosing – inside enclosing functions
+
+Global – top-level of the module
+
+Built-in – Python’s built-in names
+
+LEGB Example
+x = "global"
+
+def outer():
+    x = "enclosing"
+    def inner():
+        x = "local"
+        print("Inner:", x)
+    inner()
+    print("Outer:", x)
+
+outer()
+print("Global:", x)
+
+
+Output
+
+Inner: local
+Outer: enclosing
+Global: global
+
+
+Explanation
+
+inner() uses local x
+
+outer() uses enclosing x
+
+Outside uses global x

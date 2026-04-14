@@ -1,0 +1,219 @@
+Spring MVC (Model–View–Controller)
+
+Spring MVC is a web framework based on the Model–View–Controller design pattern.
+It is used to build web applications and REST APIs by separating responsibilities into clear layers.
+
+1. What is MVC?
+
+MVC is an architectural pattern that divides an application into three components:
+
+Model
+
+View
+
+Controller
+
+This separation improves maintainability, scalability, and testability.
+
+2. Components of MVC
+1. Model
+
+Definition:
+
+Represents application data and business logic.
+
+In Spring:
+
+Entity classes
+
+DTOs
+
+Service layer classes
+
+Domain objects
+
+Example:
+
+public class User {
+    private Long id;
+    private String name;
+}
+
+
+Responsibilities:
+
+Holds data
+
+Applies business rules
+
+Interacts with the database (through repositories)
+
+2. Controller
+
+Definition:
+
+Handles incoming HTTP requests and controls application flow.
+
+In Spring:
+
+Annotated with @Controller or @RestController
+
+Example:
+
+@RestController
+public class HelloController {
+
+    @GetMapping("/hello")
+    public String hello() {
+        return "Hello World";
+    }
+}
+
+
+Responsibilities:
+
+Receives requests
+
+Calls service layer methods
+
+Returns a response or view name
+
+3. View
+
+Definition:
+
+Presentation layer that displays data to the user.
+
+In Spring MVC:
+
+JSP
+
+Thymeleaf
+
+HTML templates
+
+For REST APIs:
+
+JSON or XML acts as the view
+
+Example (Thymeleaf):
+
+<p th:text="${message}"></p>
+
+
+Responsibilities:
+
+Displays data
+
+Contains no business logic
+
+Handles UI rendering only
+
+3. Spring MVC Request Flow
+
+Client sends an HTTP request
+
+DispatcherServlet receives the request
+
+DispatcherServlet routes it to the appropriate Controller
+
+Controller calls the Model (service and repository)
+
+Model returns data to the Controller
+
+Controller returns a view name or response body
+
+Response is sent back to the client
+
+4. DispatcherServlet
+
+Definition:
+
+The front controller of Spring MVC.
+
+Key responsibilities:
+
+Intercepts all incoming requests
+
+Identifies the correct controller
+
+Manages request and response flow
+
+Note:
+
+In Spring Boot, DispatcherServlet is auto-configured.
+
+5. Important Spring MVC Annotations
+Annotation	Purpose
+@Controller	Handles web requests and returns views
+@RestController	Handles REST requests and returns JSON/XML
+@RequestMapping	Maps URLs to methods
+@GetMapping	Handles GET requests
+@PostMapping	Handles POST requests
+@RequestBody	Binds request body to object
+@PathVariable	Extracts data from URL
+@RequestParam	Extracts query parameters
+
+6. Traditional MVC vs REST MVC
+Aspect	     Traditional MVC	REST MVC
+View type	JSP / HTML	JSON / XML
+Controller	@Controller	@RestController
+Output	       UI pages	        API responses
+Usage	     Web applications	Microservices
+
+7. Layered Architecture Using MVC
+
+Recommended structure:
+
+Controller
+   ↓
+Service
+   ↓
+Repository
+   ↓
+Database
+
+
+Benefits:
+
+Loose coupling
+
+Clear separation of concerns
+
+Easier testing and maintenance
+
+
+8. Advantages of Spring MVC
+
+Clean separation of layers
+
+Scalable architecture
+
+Easy integration with Spring modules
+
+Suitable for both web apps and microservices
+
+Supports RESTful APIs
+
+
+9. Real-Time Example
+
+Request:
+
+GET /users/1
+
+
+Flow:
+
+Controller receives request
+
+Service processes business logic
+
+Repository fetches data from database
+
+JSON response is returned to client
+
+
+10. One-Line Summary
+
+Spring MVC is a framework that implements the Model–View–Controller pattern to separate data handling, request processing, and presentation, enabling scalable and maintainable applications.

@@ -1,0 +1,12 @@
+springboot-user-api
+ └── src/main/java/com/example/users
+     ├── UserApiApplication.java
+     ├── controller/UserController.java
+     ├── entity/User.java
+     └── repository/UserRepository.java
+ └── src/main/resources
+     └── application.yml
+
+
+
+./mvnw spring-boot:run

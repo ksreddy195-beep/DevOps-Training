@@ -1,0 +1,25 @@
+A computer network is a group of connected devices that communicate with each other to share data and resources. It enables efficient communication and supports services like email, file sharing, and internet access.
+
+Connects multiple devices such as computers, servers, and printers
+Enables data and resource sharing
+Supports communication services (email, messaging)
+Allows internet and network-based applications
+Improves efficiency and collaboration.
+
+Basic Terminologies
+Basic terminologies of computer networking are:
+
+Network: A group of connected computers and devices that can communicate and share data.
+
+Node: Any device that can send, receive, or forward data in a network. This includes laptops, mobiles, printers, earbuds, servers, etc.
+
+Networking Devices: Devices that manage and support networking functions. This includes routers, switches, hubs, and access points.
+
+Transmission Media: The physical or wireless medium through which data travels between devices.
+
+Wired media: Ethernet cables, optical fibre.
+
+Wireless media: Wi-Fi, Bluetooth, infrared
+
+Service Provider Networks: Networks offered by external providers that allow users or organisations to lease network access and capabilities. This includes internet providers, mobile carriers, etc.
+

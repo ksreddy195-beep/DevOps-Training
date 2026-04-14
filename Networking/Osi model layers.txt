@@ -1,0 +1,210 @@
+Layers:
+
+Application Layer
+
+presentation layer     (data encryption)
+
+session layer          (session management)
+
+Transport Layer        (data segmentation)
+
+network layer          (logical addressing and routing)
+
+Data Link layer        (detects errors)
+
+Physical layer         (data transmission through cables)
+---
+
+Definitions of each individual layer:
+
+Application layer:
+
+
+Purpose:
+
+Closest to the end user
+
+Provides network services to applications
+
+What it does:
+
+Allows users to interact with the network
+
+Handles requests like web browsing, email, file transfer
+
+Examples:
+
+HTTP / HTTPS (web)
+
+FTP (file transfer)
+
+SMTP (email)
+
+DNS (domain name lookup)
+
+Example:
+When you open a website, your browser uses HTTP at this layer.
+
+---
+Presentation Layer (Layer 6)
+Purpose:
+
+Formats data so both systems understand it
+
+What it does:
+
+Data translation (ASCII, Unicode)
+
+Encryption & decryption
+
+Data compression
+2
+Examples:
+
+SSL / TLS
+
+JPEG, MP3 formats
+
+Example:
+HTTPS encrypts data here before sending it.
+---
+Session Layer (Layer 5)
+Purpose:
+
+Manages communication sessions
+
+What it does:
+
+Establishes, maintains, and terminates sessions
+
+Handles checkpoints and recovery
+
+Examples:
+
+Session login/logout
+
+API session tokens
+
+Example:
+Maintains your logged-in session on a website.
+---
+Transport Layer (Layer 4)
+Purpose:
+
+Provides end-to-end data delivery
+
+What it does:
+
+Breaks data into segments
+
+Ensures reliable delivery
+
+Flow and error control
+
+Protocols:
+
+TCP – reliable, ordered, slower
+
+UDP – fast, no guarantee
+
+Example:
+Video calls use UDP; file downloads use TCP.
+
+---
+Network Layer (Layer 3)
+Purpose:
+
+Handles routing and logical addressing
+
+What it does:
+
+Finds best path for data
+
+Assigns IP addresses
+
+Packet forwarding
+
+Protocols:
+
+IP (IPv4 / IPv6)
+
+ICMP
+
+Routing protocols (OSPF, BGP)
+
+Example:
+Routers work at this layer.
+---
+Data Link Layer (Layer 2)
+Purpose:
+
+Ensures node-to-node delivery
+
+What it does:
+
+Uses MAC addresses
+
+Error detection (CRC)
+
+Frame creation
+
+Examples:
+
+Ethernet
+
+ARP
+
+Switches operate here
+
+Example:
+Switch sends data to the correct device using MAC addres
+---
+Physical Layer (Layer 1)
+Purpose:
+
+Transfers raw bits over physical media
+
+What it does:
+
+Defines cables, voltage, signals
+
+Converts data into electrical/optical signals
+
+Examples:
+
+Ethernet cables
+
+Fiber optics
+
+Hubs
+
+Example:
+Actual data travels through cables here.
+---
+
+Browser (L7)
+↓
+Encryption (L6)
+↓
+Session handling (L5)
+↓
+TCP segmentation (L4)
+↓
+IP routing (L3)
+↓
+MAC framing (L2)
+↓
+Cables / Signals (L1)
+---
+DevOps Perspective
+
+L7: Nginx, Ingress, APIs
+
+L4: Load balancers (TCP/UDP)
+
+L3: VPC, subnets, routing
+
+L2: Switching, MAC addressing
+
+L1: Cloud infra hardware
+---

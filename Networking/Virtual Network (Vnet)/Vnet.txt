@@ -1,0 +1,101 @@
+What is a Virtual Network?
+
+A Virtual Network is a logically isolated network created in the cloud that works just like a traditional on-premises network but is software-defined.
+
+It allows cloud resources (VMs, databases, containers, etc.) to communicate securely with each other, the internet, and on-premise networks.
+
+Think of it as your own private network inside a cloud provider’s data center.
+
+--------------------------------------------------------------------------------
+Key Components of a Virtual Network
+Address Space (CIDR)
+
+Defines the IP range for the network
+
+Example: 10.0.0.0/16
+
+Used to assign private IPs to resources
+---
+Subnets
+
+Smaller network segments inside a virtual network
+
+Used to group resources logically
+
+Example:
+
+Public Subnet → Web servers
+
+Private Subnet → Databases
+
+VNet: 10.0.0.0/16
+ ├── Subnet-1: 10.0.1.0/24 (Web)
+ └── Subnet-2: 10.0.2.0/24 (DB)
+
+---
+Network Interfaces (NIC)
+
+Attached to VMs
+
+Enables communication using private IPs
+---
+Routing
+
+Controls how traffic flows
+
+Default routes are auto-created
+
+Custom routes can be added (User Defined Routes)
+---
+Security Controls
+
+Security Groups (NSG / SG)
+
+Allow or deny traffic using rules (IP, port, protocol)
+
+Firewalls
+
+NACLs (AWS)
+---
+Why Virtual Networks are Secure
+
+Completely isolated from other cloud customers
+
+Uses private IP addressing
+
+Controlled traffic using:
+
+Firewall rules
+
+Security groups
+
+Routing tables
+
+---
+Where Virtual Networks Are Used (DevOps View)
+
+Microservices communication
+
+Kubernetes (EKS / AKS / GKE)
+
+Secure CI/CD pipelines
+
+Multi-tier applications
+
+Hybrid cloud setups
+---
+Real-Life Analogy
+
+Virtual Network = Office building
+
+Subnets = Floors
+
+Security Groups = Security guards
+
+Routes = Elevators & stairs
+
+Firewall = Main gate security
+---
+One-Line Summary
+
+A Virtual Network is a secure, isolated, cloud-based network that lets resources communicate safely and efficiently
