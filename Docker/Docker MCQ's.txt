@@ -1,0 +1,142 @@
+What is Docker primarily used for?
+A. Virtualization of hardware
+B. Containerization of applications
+C. Managing databases
+D. Writing code
+Ans:B
+
+What is a Docker image?
+A. A running instance of a container
+B. A template to create containers
+C. A storage volume
+D. A network configuration
+Ans:B
+
+Which command is used to run a container?
+A. docker build
+B. docker run
+C. docker start
+D. docker create
+Ans:B
+
+What is the default Docker network?
+A. host
+B. bridge
+C. overlay
+D. none
+Ans:B
+
+What is the difference between a container and an image?
+A. No difference
+B. Image is running instance, container is template
+C. Container is running instance, image is template
+D. Both are same
+Ans:C
+
+Intermediate MCQs
+What is the purpose of a Dockerfile?
+A. To run containers
+B. To define how an image is built
+C. To monitor containers
+D. To store logs
+Ans:B
+
+What does docker ps do?
+A. Shows all images
+B. Shows running containers
+C. Deletes containers
+D. Builds images
+Ans:B
+
+What is a Docker volume used for?
+A. Networking
+B. Logging
+C. Persistent storage
+D. Security
+Ans:C
+
+Which instruction is used to specify the base image?
+A. RUN
+B. CMD
+C. FROM
+D. ENTRYPOINT
+Ans:C
+
+What is Docker Compose used for?
+A. Building images
+B. Managing multi-container applications
+C. Monitoring containers
+D. Securing containers
+Ans:B
+
+Advanced MCQs
+What is the difference between CMD and ENTRYPOINT?
+A. Both are same
+B. CMD provides defaults, ENTRYPOINT defines main command
+C. ENTRYPOINT is deprecated
+D. CMD cannot be overridden
+Ans:B
+
+What does docker exec do?
+A. Creates a new container
+B. Runs a command inside a running container
+C. Stops a container
+D. Deletes a container
+Ans:B
+
+What is a multi-stage build?
+A. Running multiple containers
+B. Using multiple Dockerfiles
+C. Reducing image size using multiple build stages
+D. Running containers in parallel
+Ans:C
+
+Which of the following helps in container isolation?
+A. Threads
+B. Namespaces
+C. Functions
+D. APIs
+Ans:B
+
+What does EXPOSE do in Dockerfile?
+A. Publishes port to host
+B. Documents container port
+C. Opens firewall
+D. Maps volume
+Ans:B
+
+Scenario-Based MCQs
+A container stops immediately after running. What is the most likely reason?
+A. Network issue
+B. No foreground process running
+C. Too many volumes
+D. Image too small
+Ans:B
+
+You want data to persist after container deletion. What should you use?
+A. Dockerfile
+B. Volume
+C. Image
+D. Network
+Ans:B
+
+Image size is too large. What is the best approach?
+A. Add more layers
+B. Use multi-stage builds
+C. Use more containers
+D. Increase memory
+Ans:B
+
+Two containers cannot communicate. What should you check?
+A. CPU usage
+B. Network configuration
+C. Image size
+D. Logs only
+Ans:B
+
+You want to override CMD at runtime. What will happen?
+A. Not possible
+B. CMD will be replaced
+C. Container will fail
+D. ENTRYPOINT will be removed
+Ans:B

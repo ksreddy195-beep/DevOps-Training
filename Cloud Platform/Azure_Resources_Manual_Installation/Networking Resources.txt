@@ -1,0 +1,242 @@
+Build and verify:
+
+Virtual Network (VNet)
+Subnets (web + app)
+NSG (firewall rules)
+Virtual Machines
+Internal communication
+Load Balancer
+End-to-end traffic flow
+Architecture
+Internet
+   ↓
+Load Balancer
+   ↓
+Web VM (web-subnet)
+   ↓
+App VM (app-subnet)
+Step 1: Create Resource Group
+Open Microsoft Azure Portal
+Go to Resource Groups
+Click Create
+
+Enter:
+
+Name: devops-rg
+Region: Central India
+
+Click Create
+
+Step 2: Create Virtual Network
+Go to Virtual Networks
+Click Create
+
+Basics:
+
+Name: devops-vnet
+Region: same as resource group
+
+IP Configuration:
+
+Address space: 10.0.0.0/16
+
+Add Subnets:
+
+Subnet 1:
+
+Name: web-subnet
+Address: 10.0.1.0/24
+
+Subnet 2:
+
+Name: app-subnet
+Address: 10.0.2.0/24
+
+Create VNet
+
+Step 3: Create Network Security Group
+Go to Network Security Groups
+Click Create
+Name: web-nsg
+Region: same
+
+Create
+
+Step 4: Configure NSG Rules
+
+Open web-nsg → Inbound rules → Add
+
+Rule 1:
+
+Port: 22
+Protocol: TCP
+Action: Allow
+Priority: 1000
+
+Rule 2:
+
+Port: 80
+Protocol: TCP
+Action: Allow
+Priority: 1001
+
+Save rules
+
+Step 5: Attach NSG to Subnet
+Go to Virtual Network → devops-vnet
+Subnets → select web-subnet
+Attach NSG: web-nsg
+Save
+Step 6: Create Virtual Machines
+
+Web VM:
+
+Go to Virtual Machines → Create
+Enter:
+Name: web-vm
+Image: Ubuntu 22.04
+Username: azureuser
+Authentication: password or SSH
+
+Networking:
+
+VNet: devops-vnet
+Subnet: web-subnet
+Public IP: Enabled
+
+Create
+
+App VM:
+
+Repeat:
+
+Name: app-vm
+Subnet: app-subnet
+Public IP: Disabled
+
+Create
+
+Step 7: Test Network Connectivity (Important)
+
+Goal: Verify that services inside VNet can talk
+
+Go to web-vm
+Click Connect → SSH
+
+Run:
+
+sudo apt update
+sudo apt install curl -y
+Get private IP of app-vm:
+Go to app-vm → Networking → note Private IP
+From web-vm:
+ping <app-private-ip>
+
+Expected:
+
+Ping should work
+
+Now test HTTP:
+
+curl http://<app-private-ip>
+
+Expected:
+
+It may fail (no server running yet)
+But connectivity should exist (no timeout)
+Step 8: Install Application on App VM
+
+SSH into app-vm (via Bastion or temporary public IP if needed)
+
+Run:
+
+sudo apt update
+sudo apt install nginx -y
+
+Start service:
+
+sudo systemctl start nginx
+Step 9: Re-test Communication
+
+From web-vm:
+
+curl http://<app-private-ip>
+
+Expected:
+
+HTML output from nginx
+
+This proves:
+
+Subnet routing works
+Internal service communication works
+Step 10: Install Web Server on Web VM
+
+SSH into web-vm:
+
+sudo apt install nginx -y
+
+Test locally:
+
+curl localhost
+
+Expected:
+
+nginx page
+Step 11: Access Web VM from Internet
+Copy public IP of web-vm
+Open browser:
+http://<web-vm-public-ip>
+
+Expected:
+
+nginx page
+Step 12: Create Load Balancer
+Go to Load Balancers → Create
+
+Basics:
+
+Name: devops-lb
+Type: Public
+
+Frontend:
+
+Create Public IP: lb-public-ip
+
+Backend pool:
+
+Add web-vm
+Step 13: Configure Health Probe
+Name: http-probe
+Protocol: HTTP
+Port: 80
+Path: /
+Step 14: Configure Load Balancer Rule
+Name: http-rule
+Frontend port: 80
+Backend port: 80
+Backend pool: web-vm
+Probe: http-probe
+
+Create
+
+Step 15: Final End-to-End Testing
+Go to Load Balancer
+Copy Public IP
+
+Open browser:
+
+http://<load-balancer-public-ip>
+
+Expected:
+
+nginx page from web-vm
+Validation Checklist
+VNet created with correct CIDR
+Subnets separated (web and app)
+NSG allows SSH and HTTP
+Web VM can ping App VM
+Web VM can curl App VM
+App VM serves nginx internally
+Web VM accessible via public IP
+Load balancer routes traffic successfully

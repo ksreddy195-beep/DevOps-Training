@@ -1,0 +1,149 @@
+1. What is a Storage Account
+
+A Storage Account is a service to store:
+
+Files (like file share)
+Blobs (images, videos, backups)
+Queues and tables
+
+Most commonly used in DevOps:
+
+Blob Storage (for logs, backups, artifacts)
+File Share (shared storage for apps)
+2. Create Storage Account in Azure Portal
+Step 1: Go to Azure Portal
+Open portal.azure.com
+Click "Create a resource"
+Step 2: Search
+Search: Storage account
+Select: Storage account
+Step 3: Basic Configuration
+
+Project details
+
+Subscription: same as before
+Resource Group: use existing (rg-devops-demo)
+
+Instance details
+
+Storage account name:
+Must be globally unique
+Only lowercase letters and numbers
+Example: sandeepstorage123
+Region:
+Same as your other resources
+Step 4: Performance
+Standard → select this (cheaper, good for testing)
+Premium → for high performance (not needed now)
+Step 5: Redundancy
+
+Choose:
+
+LRS (Locally Redundant Storage)
+
+Best for testing:
+
+Cheapest option
+Step 6: Networking
+
+Keep default:
+
+Public endpoint (all networks)
+
+You can restrict later.
+
+Step 7: Data Protection (optional for now)
+Keep defaults (no need to change for testing)
+Step 8: Review + Create
+Click Review + Create
+Click Create
+
+Wait for deployment.
+
+3. After creation
+
+Go to your Storage Account.
+
+You will see options like:
+
+Containers
+File shares
+Queues
+Tables
+4. Create a Blob Container (for testing)
+Step 1:
+Go to Containers
+Step 2:
+Click + Container
+
+Fill:
+
+Name: test-container
+Public access level: Private
+
+Click Create.
+
+5. Upload a file
+Open test-container
+Click Upload
+Select any file from your system
+Click Upload
+
+File is now stored in Azure.
+
+6. Access the file
+
+Click the file → copy URL
+
+Example:
+
+https://sandeepstorage123.blob.core.windows.net/test-container/file.txt
+
+Note:
+
+If container is private → URL won’t open directly
+You need SAS token (advanced)
+7. Access using Storage Explorer (recommended)
+
+Download:
+https://azure.microsoft.com/en-us/products/storage/storage-explorer/
+
+Login → you can:
+
+Upload/download files
+Browse containers easily
+8. Access using Access Keys
+
+Go to:
+
+Storage Account → Access keys
+
+You will see:
+
+Connection string
+Keys
+
+Used in:
+
+Applications
+Scripts
+CI/CD pipelines
+9. Test using Azure CLI
+
+List containers:
+
+az storage container list --account-name sandeepstorage123 --output table
+10. Common issues
+Upload not working
+Check permissions
+Cannot access file
+Container is private (expected)
+11. DevOps perspective (important)
+
+You will use Storage Account for:
+
+Terraform remote state storage
+Application logs
+Backup storage
+CI/CD artifacts
+Devops Training

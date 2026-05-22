@@ -1,0 +1,104 @@
+azure
+
+four steps:
+
+azure account
+subscription
+resource group
+resources
+
+
+1. Azure Account
+
+Microsoft Azure
+
+Definition:
+An Azure Account is the entry point to Azure, used to sign in and access all cloud services.
+
+In simple words:
+
+This is your login (email + password)
+It identifies who you are in Azure
+
+Example:
+
+You sign in to portal.azure.com using your Microsoft account
+
+
+2. Subscription
+
+Definition:
+A Subscription is a billing and access boundary that contains all your Azure resources.
+
+In simple words:
+
+It tracks usage and cost
+Everything you create is billed under a subscription
+
+Key points:
+
+One account can have multiple subscriptions
+Used to separate environments (Dev / QA / Prod)
+
+Example:
+
+Dev Subscription
+Production Subscription
+
+
+3. Resource Group
+
+Definition:
+A Resource Group is a logical container that holds related Azure resources.
+
+In simple words:
+
+Like a folder
+Used to organize resources that belong together
+
+Why important:
+
+Easy to manage
+Easy to delete everything at once
+Apply permissions at group level
+
+Example:
+
+ecommerce-app-rg
+VM
+Database
+Storage
+
+
+4. Resources
+
+Definition:
+Resources are the actual services/components you create in Azure.
+
+In simple words:
+
+These are the real things you use
+
+Examples:
+
+Virtual Machine (server)
+Storage Account
+Database
+Virtual Network
+
+
+One-Line Summary
+Azure Account → Who you are
+Subscription → Billing & boundary
+Resource Group → Logical grouping
+Resources → Actual services
+
+
+Simple Analogy 
+
+Think of it like a company:
+
+Azure Account → You (employee)
+Subscription → Company budget
+Resource Group → Project folder
+Resources → Tools used in project

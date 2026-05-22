@@ -1,0 +1,148 @@
+1. What is Azure Web App?
+Azure Web App is a fully managed Platform-as-a-Service (PaaS) offering in Microsoft Azure that allows you to build, deploy, and scale web applications quickly without managing infrastructure.
+It supports hosting:
+Web applications
+REST APIs
+Backend services
+
+
+2. Key Features
+Fully managed service (no server management)
+Supports multiple languages:
+.NET
+Java
+Node.js
+Python
+PHP
+Built-in auto scaling
+Continuous deployment support
+High availability with SLA
+Custom domains and SSL support
+Integration with Azure DevOps and GitHub
+
+
+3. App Service Plan
+An App Service Plan defines the compute resources for your web app.
+Key points:
+Determines pricing tier
+Defines CPU, memory, and storage
+Multiple apps can run on the same plan
+Scaling happens at plan level
+Pricing tiers:
+Free / Shared (for learning)
+Basic (small workloads)
+Standard (production apps)
+Premium (high performance, autoscaling)
+
+
+4. Deployment Methods
+You can deploy applications using:
+Azure Portal (manual upload)
+GitHub integration (CI/CD)
+Azure DevOps pipelines
+Local Git repository
+FTP deployment
+Docker containers
+
+
+
+5. Scaling in Azure Web App
+Two types:
+Vertical Scaling (Scale Up):
+Increase CPU, RAM by changing pricing tier
+Horizontal Scaling (Scale Out):
+Increase number of instances
+Load is distributed automatically
+Autoscaling:
+Automatically adjusts instances based on CPU, memory, or rules
+
+
+
+6. Configuration Settings
+Important configurations:
+Application settings (environment variables)
+Connection strings
+General settings (stack, version)
+Custom domains
+SSL certificates
+
+
+7. Monitoring and Logging
+Azure provides built-in monitoring:
+Metrics (CPU, memory, requests)
+Application logs
+Access logs
+Integration with Azure Monitor and Application Insights
+
+
+
+8. Security Features
+HTTPS enforced by default
+Authentication & Authorization (Azure AD, Google, etc.)
+Managed Identity for secure resource access
+IP restrictions
+Private endpoints (for internal access)
+
+
+
+9. Slots (Deployment Slots)
+Used for staging environments
+Example:
+Production slot
+Staging slot
+
+Benefits:
+
+Test before production
+Zero-downtime deployment using slot swap
+
+
+10. Custom Domain and SSL
+You can map your own domain (e.g., www.example.com
+)
+Free SSL certificates available
+Supports both public and private certificates
+
+
+
+11. Integration with Other Azure Services
+Azure SQL Database
+Azure Storage
+Azure Key Vault
+Azure CDN
+Azure API Management
+
+
+
+12. Use Cases
+Hosting websites
+Hosting APIs
+Backend for mobile apps
+Microservices architecture
+
+
+
+13. Advantages
+No infrastructure management
+Easy deployment
+Scalable and reliable
+Supports DevOps practices
+Built-in security and monitoring
+
+
+
+14. Limitations
+Less control over underlying OS
+Cost increases with scaling
+Not ideal for highly customized infrastructure needs
+
+
+
+15. Basic Flow (End-to-End)
+Create Resource Group
+Create App Service Plan
+Create Web App
+Deploy Code (GitHub / ZIP / Docker)
+Configure settings
+Enable monitoring
+Scale as needed

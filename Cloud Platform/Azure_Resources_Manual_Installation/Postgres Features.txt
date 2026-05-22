@@ -1,0 +1,130 @@
+1. What you are creating
+
+You will create a managed database service in Azure called:
+
+Azure Database for PostgreSQL – Flexible Server
+
+Azure handles:
+
+Backups
+Patching
+Scaling
+
+You only focus on using the database.
+
+2. Steps to create PostgreSQL in Azure Portal
+Step 1: Login
+
+Go to https://portal.azure.com
+ and sign in.
+
+Step 2: Create resource
+Click "Create a resource"
+Search for PostgreSQL
+Select "Azure Database for PostgreSQL Flexible Server"
+Step 3: Basic details
+
+Project details:
+
+Subscription: select your subscription
+Resource Group: create new (example: rg-devops-demo)
+
+Server details:
+
+Server name: must be unique (example: sandeep-postgres-demo)
+Region: choose nearest (Central India or South India)
+PostgreSQL version: latest available
+
+Step 4: Admin credentials
+Admin username: pgadmin
+Password: create a strong password and save it
+Step 5: Compute and storage
+
+Click "Configure server":
+
+Workload: Development
+SKU: Burstable (cost-effective)
+Example: B1ms
+
+Click Save.
+
+Step 6: Networking
+Choose Public access
+Click "Add current client IP"
+
+This step is required to connect from your system.
+
+Step 7: Review and create
+Click "Review + Create"
+Click "Create"
+
+Wait for deployment to complete.
+
+3. After creation
+
+Go to the resource and note:
+
+Server name: something like yourname.postgres.database.azure.com
+Username: pgadmin@your-server-name
+Password: the one you created
+4. Test the database
+Option 1: Using pgAdmin
+
+Install pgAdmin from https://www.pgadmin.org/download/
+
+Add a new server:
+
+General:
+
+Name: AzurePG
+
+Connection:
+
+Host: your-server.postgres.database.azure.com
+Username: pgadmin@your-server-name
+Password: your password
+Port: 5432
+
+Save and connect.
+
+Option 2: Using psql (command line)
+
+Run:
+
+psql "host=your-server.postgres.database.azure.com port=5432 dbname=postgres user=pgadmin@your-server-name sslmode=require"
+
+5. Test queries
+
+Run the following:
+
+CREATE TABLE test_users (
+id SERIAL PRIMARY KEY,
+name VARCHAR(50),
+age INT
+);
+
+INSERT INTO test_users (name, age)
+VALUES ('Sandeep', 25);
+
+SELECT * FROM test_users;
+
+6. Common issues
+
+Connection failure:
+
+Ensure your IP is added in Networking settings
+
+Authentication error:
+
+Username must be in format username@servername
+
+SSL error:
+
+Use sslmode=require
+7. DevOps perspective
+
+After this, you can extend:
+
+Automate using Terraform
+Store credentials in Azure Key Vault
+Connect applications via CI/CD pipelines

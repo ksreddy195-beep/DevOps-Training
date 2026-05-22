@@ -1,0 +1,181 @@
+1. Identity & Access
+
+Service:
+Microsoft Azure Active Directory
+
+What it does:
+
+Who can log in?
+What can they access?
+
+DevOps use:
+
+Give access to developers
+Restrict production access
+CI/CD authentication
+
+2. Compute (Where code runs)
+
+Service:
+Azure Virtual Machines
+
+What it does:
+
+Creates servers (Linux/Windows)
+
+DevOps use:
+
+Run apps
+Install Docker
+Testing environments
+
+3. Networking (How things communicate)
+
+Key services:
+
+VNet (Virtual Network)
+Subnets
+NSG (firewall rules)
+Public IP
+
+What it does:
+
+Connect services securely
+
+DevOps use:
+
+Control traffic
+Secure applications
+
+
+4. Storage (Where data is stored)
+
+Service:
+Azure Storage
+
+Types:
+Container (folder)
+Blob (files) 
+Disk (VM storage)
+
+DevOps use:
+
+Store logs
+Store backups
+Store artifacts
+
+
+5. Containers (Modern apps)
+
+Service:
+
+Azure Container Instances
+Azure Kubernetes Service (AKS)
+
+DevOps use:
+
+Run Docker containers
+Microservices architecture
+
+
+6. Monitoring (Observability)
+
+Service:
+
+Azure Monitor
+Log Analytics
+
+DevOps use:
+
+Track logs
+Detect failures
+Alerts
+
+
+7. CI/CD & Automation
+
+Service:
+
+Azure DevOps
+GitHub Actions
+
+DevOps use:
+
+Deploy code automatically
+Build pipelines
+
+
+8. Secrets Management
+Service:
+
+Azure Key Vault
+
+Definition:
+
+A service used to securely store sensitive information like passwords, API keys, certificates, and tokens.
+
+What it stores:
+Secrets (DB passwords, API keys)
+Certificates (SSL)
+Keys (encryption keys)
+
+Why DevOps needs it:
+Never hardcode secrets in code
+Secure CI/CD pipelines
+Centralized secret management
+
+
+Real-world example:
+Instead of:
+
+DB_PASSWORD = "mypassword123"
+
+You store it in Key Vault and fetch it securely.
+
+Simple explanation to student:
+
+“Key Vault is like a secure locker where we store passwords and secrets instead of writing them in code.”
+
+
+
+9. Container Image Registry
+Service:
+
+Azure Container Registry
+
+Definition:
+
+A private repository to store and manage Docker images.
+
+What it stores:
+Docker images
+Application builds
+
+Why DevOps needs it:
+Store application images
+Used in CI/CD pipelines
+Deploy images to VM / Kubernetes
+
+Flow:
+Code → Build Docker Image → Push to ACR → Deploy
+Simple explanation:
+
+“ACR is like Docker Hub, but private and secure inside Azure.”
+
+
+
+Developer writes code
+        ↓
+Push to GitHub
+        ↓
+CI/CD Pipeline runs
+        ↓
+Build Docker Image
+        ↓
+Push to ACR
+        ↓
+Fetch secrets from Key Vault
+        ↓
+Deploy to VM / AKS
+        ↓
+Logs go to Monitor

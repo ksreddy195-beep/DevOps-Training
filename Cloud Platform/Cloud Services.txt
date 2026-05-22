@@ -1,0 +1,117 @@
+Types of Cloud Services
+
+Cloud services are mainly divided into three categories based on who manages what.
+
+1. IaaS (Infrastructure as a Service)
+Definition
+
+IaaS provides basic IT infrastructure over the internet such as virtual machines, storage, and networking.
+
+What you get (Provider manages)
+Physical servers (data centers)
+Virtualization layer
+Networking (VPC, Load Balancers)
+Storage (Block, Object storage)
+
+What you manage
+Operating System (Linux/Windows)
+Middleware (e.g., runtime like Java, Python)
+Applications
+Security configurations (patching, firewall rules inside OS)
+Example
+Amazon Web Services EC2 (Elastic Compute Cloud)
+
+Use Cases
+Hosting applications with full control
+Running custom software or legacy systems
+DevOps pipelines (CI/CD tools, Kubernetes clusters)
+When fine-grained control over infrastructure is required
+
+Advantages
+Full control and flexibility
+Scalable on demand
+Pay only for what you use
+
+Disadvantages
+More responsibility (OS patching, security)
+Requires infrastructure knowledge
+--------------------------------------------------------------------------------------
+
+2. PaaS (Platform as a Service)
+
+Definition
+
+PaaS provides a ready-to-use platform where developers can deploy applications without worrying about infrastructure.
+
+What you get (Provider manages)
+
+Infrastructure (servers, storage, networking)
+Operating System
+Runtime environment (Java, Python, Node.js)
+Auto scaling and load balancing
+
+What you manage
+Application code
+Application configuration
+Example
+Amazon Web Services Elastic Beanstalk
+
+Use Cases
+Web application development
+API development
+Rapid prototyping
+Developers who want to focus only on coding
+
+Advantages
+Faster development and deployment
+No need to manage servers
+Built-in scaling and monitoring
+
+Disadvantages
+Less control over environment
+Vendor lock-in possible
+Limited customization
+----------------------------------------------------------------------------------------
+3. SaaS (Software as a Service)
+Definition
+
+SaaS provides ready-to-use software applications over the internet.
+
+What you get (Provider manages everything)
+Infrastructure
+Platform
+Application
+Security and updates
+What you manage
+Only usage (user settings, configurations)
+Examples
+Gmail
+Dropbox
+
+Use Cases
+Email services
+File storage and sharing
+Collaboration tools
+CRM and business applications
+
+Advantages
+No setup required
+Accessible from anywhere
+Automatic updates
+Cost-effective (subscription model)
+
+Disadvantages
+No control over infrastructure
+Limited customization
+Data privacy concerns
+
+------------------------------------------------------------------------
+Simple Way to Explain (Best Teaching Line)
+IaaS → “You manage everything except hardware”
+PaaS → “You manage only your code”
+SaaS → “You just use the software”
+Real-Life Analogy
+IaaS → Renting a house → You arrange furniture, maintain everything
+PaaS → Renting a fully furnished house → Just live and use
+SaaS → Staying in a hotel → Everything is managed for you
+-------------------------------------------------------------------------

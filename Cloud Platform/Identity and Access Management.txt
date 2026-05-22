@@ -1,0 +1,46 @@
+Service
+
+Microsoft Azure Active Directory
+(now called Microsoft Entra ID, but both names are used)
+
+1. Core Concepts (Neat Notes)
+Users
+Identity created in Azure
+Used for login & access control
+
+Types:
+
+Admin user (full access)
+Normal user (restricted access)
+Service Principal (used by apps/automation)
+
+Roles
+Define what actions are allowed
+
+Common roles:
+
+Reader
+Can only view resources
+Contributor
+Can create/update resources
+Cannot manage access
+Owner
+Full control (including access management)
+RBAC (Role-Based Access Control)
+
+Role-Based Access Control
+
+Controls who can access what
+Works using:
+User
+Role
+Scope
+Scope levels:
+Subscription (highest)
+Resource Group
+Resource (lowest)
+
+Example:
+
+User A → Contributor → Resource Group X
+→ Can manage everything inside that RG

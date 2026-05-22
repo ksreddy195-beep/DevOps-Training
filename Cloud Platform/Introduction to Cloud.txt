@@ -1,0 +1,24 @@
+Cloud computing means delivering computing services (servers, storage, networking, databases, software) over the internet instead of running them on your local machine or company data center.
+
+Traditional model:
+You buy servers → maintain them → handle failures → scale manually
+
+Cloud model:
+You rent resources from providers → use on demand → scale anytime → pay only for usage
+
+Simple definition:
+Cloud = On-demand IT resources over the internet with pay-as-you-go pricing.
+
+------------------------------------------------------------------------------------
+Why Cloud is Important
+Key problems solved:
+
+No need to buy hardware
+Faster environment setup
+Easy scaling (auto scale apps)
+High availability (multiple data centers)
+Automation friendly (APIs, CLI, Terraform)
+
+DevOps benefit:
+Everything becomes programmable (Infrastructure as Code)
+----------------------------------------------------------------------

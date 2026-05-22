@@ -1,0 +1,117 @@
+1. What is Azure Container Registry
+
+Azure Container Registry is a private Docker registry where you can:
+
+Store container images
+Pull images for deployments (AKS, App Service, etc.)
+
+Think of it like:
+
+Docker Hub → public
+ACR → private inside Azure
+2. Create ACR in Azure Portal
+Step 1: Go to Azure Portal
+Open portal.azure.com
+Click "Create a resource"
+Step 2: Search
+Search: Container Registry
+Select: Container Registry
+Step 3: Basic Configuration
+
+Fill the details:
+
+Project details
+
+Subscription: same as PostgreSQL
+Resource Group: use same (rg-devops-demo)
+
+Instance details
+
+Registry name:
+Must be globally unique
+Example: sandeepacr123
+Region:
+Same as your PostgreSQL (for better performance)
+
+SKU (important)
+
+Choose:
+
+Basic (for testing)
+
+Other options:
+
+Standard → more storage/performance
+Premium → advanced networking
+
+For now:
+Basic is perfect
+
+Step 4: Review + Create
+Click Review + Create
+Click Create
+
+Wait for deployment.
+
+3. After creation
+
+Go to your ACR resource and note:
+
+Login server
+Example:
+
+sandeepacr123.azurecr.io
+4. Enable admin access (for easy testing)
+
+Go to:
+
+Settings → Access keys
+Enable:
+Admin user → ON
+
+You will get:
+
+Username
+Password
+5. Login to ACR from local machine
+
+Make sure Docker is installed.
+
+Run:
+
+docker login sandeepacr123.azurecr.io
+
+Enter:
+
+Username → from Azure
+Password → from Azure
+6. Push a test image
+Step 1: Pull a sample image
+docker pull nginx
+Step 2: Tag the image
+docker tag nginx sandeepacr123.azurecr.io/nginx:v1
+Step 3: Push to ACR
+docker push sandeepacr123.azurecr.io/nginx:v1
+7. Verify in Azure
+
+Go to:
+
+ACR → Repositories
+
+You should see:
+
+nginx
+tag: v1
+8. Common issues
+Login failed
+Ensure admin user is enabled
+Push denied
+Check login server name
+Ensure you tagged correctly
+9. DevOps perspective
+
+Later you will use ACR with:
+
+AKS (Kubernetes)
+CI/CD pipelines (GitHub Actions)
+Image scanning and versioning
